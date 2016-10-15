@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let editor = Notepad(self.view.bounds, themeFile: "one-dark-custom")
+        let editor = Notepad(self.view.bounds, themeFile: "blues-clues")
         
-        let testFile = Bundle.main.path(forResource: "description", ofType: "md")
+        let testFile = Bundle.main.path(forResource: "tests", ofType: "md")
         do {
             let text = try String(contentsOfFile: testFile!)
             editor.text = text
