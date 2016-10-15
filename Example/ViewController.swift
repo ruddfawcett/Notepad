@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let editor = Notepad(self.view.bounds, themeFile: "blues-clues")
+        let editor = Notepad(self.view.bounds, themeFile: "one-dark")
         
         let testFile = Bundle.main.path(forResource: "tests", ofType: "md")
         do {
