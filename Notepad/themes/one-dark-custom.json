@@ -20,14 +20,14 @@
             "size": 28
         },
         "h2": {
-            "font": "Menlo-Bold",
+            "font": "Courier-Bold",
             "color": "#D36770",
             "size": 25
         },
         "h3": {
             "font": "Courier-Bold",
             "color": "#D36770",
-            "size": 12
+            "size": 22
         },
         "body": {
             "font": "Courier",
@@ -44,6 +44,16 @@
         },
         "code": {
             "color": "#95C077"
+        },
+        "handle": {
+            "regex": "[@＠][a-zA-Z0-9_]{1,20}",
+            "color": "#78ddd5"
+        },
+        "url": {
+            "color": "#78aedd"
+        },
+        "image": {
+            "color": "#78aedd"
         }
     }
 }

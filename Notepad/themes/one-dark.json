@@ -38,6 +38,16 @@
         },
         "code": {
             "color": "#95C077"
+        },
+        "handle": {
+            "regex": "[@＠][a-zA-Z0-9_]{1,20}",
+            "color": "#78ddd5"
+        },
+        "url": {
+            "color": "#78aedd"
+        },
+        "image": {
+            "color": "#78aedd"
         }
     }
 }
