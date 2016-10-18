@@ -18,6 +18,16 @@ Take a look at all of the [themes and swatches](themes.md) when choosing the the
 
 You can find all of the raw themes in the [themes folder](Notepad/themes), and the file names are case-sensitive.
 
+### Custom Regex
+Using regex, you can match custom patterns in your Notepad editor by passing a `regex` attribute in your theme. For example, one that highlights Twitter handles in a teal color:
+
+```json
+"handle": {
+  "regex": "[@＠][a-zA-Z0-9_]{1,20}",
+  "color": "#78ddd5"
+}
+```
+
 ## Installation
 
 Copy the source from the Notepad folder to your project, or add Notepad to your Podfile if you're using CocoaPods.
