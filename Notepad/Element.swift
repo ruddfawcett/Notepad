@@ -24,19 +24,14 @@ enum Element: String {
     case boldItalic = "(\\*\\*\\*\\w+(\\s\\w+)*\\*\\*\\*)"
     case code = "(`\\w+(\\s\\w+)*`)"
     
+    case url = "\\[([^\\]]+)\\]\\(([^\\)\"\\s]+)(?:\\s+\"(.*)\")?\\)"
+    case image = "\\!\\[([^\\]]+)\\]\\(([^\\)\"\\s]+)(?:\\s+\"(.*)\")?\\)"
+    
     /// Converts an enum value (type String) to a NSRegularExpression.
     ///
     /// - returns: The NSRegularExpression.
     func toRegex() -> NSRegularExpression {
-        var pattern: NSRegularExpression = NSRegularExpression()
-        
-        do {
-            try pattern = NSRegularExpression(pattern: self.rawValue, options: .anchorsMatchLines)
-        } catch {
-            print(error)
-        }
-        
-        return pattern
+        return self.rawValue.toRegex()
     }
     
     /// Returns an Element enum based upon a String.
@@ -54,6 +49,8 @@ enum Element: String {
         case "italic": return .italic
         case "boldItalic": return .boldItalic
         case "code": return .code
+        case "url": return .url
+        case "image": return .image
         default: return .unknown
         }
     }

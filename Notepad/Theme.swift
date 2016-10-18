@@ -61,7 +61,13 @@ struct Theme {
             allStyles.removeValue(forKey: "body")
             for (element, attributes) in allStyles {
                 if let parsedStyles = parse(attributes as! [String : AnyObject]) {
-                    styles.append(Style(element: Element.unknown.from(string: element), attributes: parsedStyles))
+                    if let regexString = attributes["regex"] as? String {
+                        let regex = regexString.toRegex()
+                        styles.append(Style(regex: regex, attributes: parsedStyles))
+                    }
+                    else {
+                        styles.append(Style(element: Element.unknown.from(string: element), attributes: parsedStyles))
+                    }
                 }
             }
         }

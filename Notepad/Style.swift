@@ -17,6 +17,11 @@ struct Style {
         self.attributes = attributes
     }
     
+    init(regex: NSRegularExpression, attributes: [String: AnyObject]) {
+        self.regex = regex
+        self.attributes = attributes
+    }
+    
     init() {
         self.regex = Element.unknown.toRegex()
     }

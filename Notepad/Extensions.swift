@@ -49,6 +49,21 @@ extension String {
                        length: utf16.distance(from: from, to: to))
     }
     
+    /// Converts a String to a NSRegularExpression.
+    ///
+    /// - returns: The NSRegularExpression.
+    func toRegex() -> NSRegularExpression {
+        var pattern: NSRegularExpression = NSRegularExpression()
+        
+        do {
+            try pattern = NSRegularExpression(pattern: self, options: .anchorsMatchLines)
+        } catch {
+            print(error)
+        }
+        
+        return pattern
+    }
+    
     /// Converts a NSRange to a Range<String.Index>.
     /// http://stackoverflow.com/a/30404532/6669540
     ///
