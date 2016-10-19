@@ -12,28 +12,28 @@ import Foundation
 /// A String type enum to keep track of the different elements we're tracking with regex.
 enum Element: String {
     case unknown = ""
-    
+
     case h1 = "^(\\#[^\\#](.*))$"
     case h2 = "^(\\#{2}(.*))$"
     case h3 = "^(\\#{3}(.*))$"
-    
+
     case body = ".*"
-    
+
     case bold = "\\**(?:^|[^*])(\\*\\*(\\w+(\\s\\w+)*)\\*\\*)"
     case italic = "\\**(?:^|[^*])(\\*(\\w+(\\s\\w+)*)\\*)"
     case boldItalic = "(\\*\\*\\*\\w+(\\s\\w+)*\\*\\*\\*)"
     case code = "(`\\w+(\\s\\w+)*`)"
-    
+
     case url = "\\[([^\\]]+)\\]\\(([^\\)\"\\s]+)(?:\\s+\"(.*)\")?\\)"
     case image = "\\!\\[([^\\]]+)\\]\\(([^\\)\"\\s]+)(?:\\s+\"(.*)\")?\\)"
-    
+
     /// Converts an enum value (type String) to a NSRegularExpression.
     ///
     /// - returns: The NSRegularExpression.
     func toRegex() -> NSRegularExpression {
         return self.rawValue.toRegex()
     }
-    
+
     /// Returns an Element enum based upon a String.
     ///
     /// - parameter string: The String representation of the enum.

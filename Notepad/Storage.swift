@@ -12,7 +12,7 @@ import UIKit
 class Storage: NSTextStorage {
     /// The Theme for the Notepad.
     var theme: Theme!
-    
+
     /// The mutable attributed string behind the entire editor.
     var backingStore = NSMutableAttributedString()
     override var string: String {
@@ -20,15 +20,15 @@ class Storage: NSTextStorage {
             return backingStore.string
         }
     }
-    
+
     override init() {
         super.init()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     /// Finds attributes within a given range on a String.
     ///
     /// - parameter location: How far into the String to look.
@@ -38,7 +38,7 @@ class Storage: NSTextStorage {
     override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [String : Any] {
         return backingStore.attributes(at: location, effectiveRange: range)
     }
-    
+
     /// Replaces edited characters within a certain range with a new string.
     ///
     /// - parameter range: The range to replace.
@@ -60,25 +60,25 @@ class Storage: NSTextStorage {
         self.edited(.editedAttributes, range: range, changeInLength: 0)
         self.endEditing()
     }
-    
+
     /// Processes any edits made to the text in the editor.
     override func processEditing() {
         let backingString = backingStore.string
         let nsRange = backingString.range(from: NSMakeRange(NSMaxRange(editedRange), 0))!
         let indexRange = backingString.lineRange(for: nsRange)
         let extendedRange: NSRange = NSUnionRange(editedRange, backingString.nsRange(from: indexRange))
-        
+
         applyStyles(extendedRange)
         super.processEditing()
     }
-    
+
     /// Applies styles to a range on the backingString.
     ///
     /// - parameter range: The range in which to apply styles.
     func applyStyles(_ range: NSRange) {
         let backingString = backingStore.string
         setAttributes(theme.body.attributes, range: range)
-        
+
         for (style) in theme.styles {
             style.regex.enumerateMatches(in: backingString, options: .withoutAnchoringBounds, range: range, using: { (match, flags, stop) in
                 if match != nil {

@@ -14,7 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         let editor = Notepad(self.view.bounds, themeFile: "one-dark")
-        
+
         let testFile = Bundle.main.path(forResource: "tests", ofType: "md")
         do {
             let text = try String(contentsOfFile: testFile!)
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         } catch {
             print(error)
         }
-        
+
         editor.textContainerInset = UIEdgeInsetsMake(40, 20, 40, 20)
         self.view.addSubview(editor)
     }
@@ -33,4 +33,3 @@ class ViewController: UIViewController {
     }
 
 }
-

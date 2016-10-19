@@ -15,11 +15,11 @@ struct Theme {
     var backgroundColor: UIColor = UIColor.white
     /// The tint color (AKA cursor color) of the Notepad.
     var tintColor: UIColor = UIColor.blue
-    
+
     /// All of the other styles for the Notepad editor.
     var styles: [Style] = []
     
-    
+
     /// Build a theme from a JSON theme file.
     ///
     /// - parameter name: The name of the JSON theme file.
@@ -35,7 +35,7 @@ struct Theme {
             print("[Notepad] Unable to load your theme file.")
         }
     }
-    
+
     /// Configures all of the styles for the Theme.
     ///
     /// - parameter data: The dictionary data form the parsed JSON file.
@@ -43,7 +43,7 @@ struct Theme {
         if let editorStyles = data["editor"] as? [String: AnyObject] {
             configureEditor(editorStyles)
         }
-        
+
         if var allStyles = data["styles"] as? [String: AnyObject] {
             if let bodyStyles = allStyles["body"] as? [String: AnyObject] {
                 if let parsedBodyStyles = parse(bodyStyles) {
@@ -57,7 +57,7 @@ struct Theme {
                 ]
                 body = Style(element: .body, attributes: attributes)
             }
-            
+
             allStyles.removeValue(forKey: "body")
             for (element, attributes) in allStyles {
                 if let parsedStyles = parse(attributes as! [String : AnyObject]) {
@@ -72,7 +72,7 @@ struct Theme {
             }
         }
     }
-    
+
     /// Sets the background color, tint color, etc. of the Notepad editor.
     ///
     /// - parameter attributes: The attributes to parse for the editor.
@@ -81,13 +81,13 @@ struct Theme {
             let value = bgColor as! String
             backgroundColor = UIColor(hexString: value)
         }
-        
+
         if let tint = attributes["tintColor"] {
             let value = tint as! String
             tintColor = UIColor(hexString: value)
         }
     }
-    
+
     /// Parses attributes from shorthand JSON to real attributed string key constants.
     ///
     /// - parameter attributes: The attributes to parse.
@@ -95,16 +95,16 @@ struct Theme {
     /// - returns: The converted attribute/key constant pairings.
     func parse(_ attributes: [String: AnyObject]) -> [String: AnyObject]? {
         var final: [String: AnyObject] = [:]
-        
+
         if let color = attributes["color"] {
             let value = color as! String
             final[NSForegroundColorAttributeName] = UIColor(hexString: value)
         }
-        
+
         if let font = attributes["font"] {
             let fontName = font as! String
             var fontSize: CGFloat = 15.0
-            
+
             if let size = attributes["size"] {
                 fontSize = size as! CGFloat
             }
@@ -112,7 +112,7 @@ struct Theme {
                 let bodyFont: UIFont = body.attributes[NSFontAttributeName] as! UIFont
                 fontSize = bodyFont.pointSize
             }
-            
+
             if fontName == "System" {
                 final[NSFontAttributeName] = UIFont.systemFont(ofSize: fontSize)
             }
@@ -125,14 +125,14 @@ struct Theme {
             if let size = attributes["size"] {
                 let bodyFont: UIFont = body.attributes[NSFontAttributeName] as! UIFont
                 let fontSize = size as! CGFloat
-                
+
                 final[NSFontAttributeName] = UIFont(name: bodyFont.fontName, size: fontSize)
             }
         }
-        
+
         return final
     }
-    
+
     /// Converts a file from JSON to a [String: AnyObject] dictionary.
     ///
     /// - parameter path: The path to the JSON file.
@@ -151,7 +151,7 @@ struct Theme {
         } catch let error as NSError {
             print(error)
         }
-        
+
         return nil
     }
 }

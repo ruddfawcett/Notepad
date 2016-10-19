@@ -11,7 +11,7 @@ import UIKit
 
 class Notepad: UITextView {
     var storage: Storage = Storage()
-    
+
     /// Creates a new Notepad.
     ///
     /// - parameter frame:     The frame of the text editor.
@@ -25,25 +25,25 @@ class Notepad: UITextView {
         self.tintColor = self.storage.theme.tintColor
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
-    
+
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         let layoutManager = NSLayoutManager()
         let containerSize = CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude)
         let container = NSTextContainer(size: containerSize)
         container.widthTracksTextView = true
-        
+
         layoutManager.addTextContainer(container)
         storage.addLayoutManager(layoutManager)
         super.init(frame: frame, textContainer: container)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let layoutManager = NSLayoutManager()
         let containerSize = CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude)
         let container = NSTextContainer(size: containerSize)
         container.widthTracksTextView = true
-        
+
         layoutManager.addTextContainer(container)
         storage.addLayoutManager(layoutManager)
     }
