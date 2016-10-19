@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Notepad'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'A themeable Markdown editor.'
   s.description      = <<-DESC
     Notepad gives your users the ability to write and edit Markdown directly in your app.
@@ -18,5 +18,6 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Notepad/*'
+  s.source_files = 'Notepad/*.swift'
+  s.resources    = 'Notepad/themes/*.json'
 end
