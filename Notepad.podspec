@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Notepad'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'A themeable Markdown editor.'
   s.description      = <<-DESC
     Notepad gives your users the ability to write and edit Markdown directly in your app.
