@@ -10,7 +10,7 @@ import Foundation
 
 
 /// A String type enum to keep track of the different elements we're tracking with regex.
-enum Element: String {
+public enum Element: String {
     case unknown = ""
 
     case h1 = "^(\\#[^\\#](.*))$"

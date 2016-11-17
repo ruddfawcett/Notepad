@@ -9,7 +9,7 @@
 
 import UIKit
 
-class Notepad: UITextView {
+public class Notepad: UITextView {
     var storage: Storage = Storage()
 
     /// Creates a new Notepad.
@@ -37,7 +37,7 @@ class Notepad: UITextView {
         super.init(frame: frame, textContainer: container)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         let layoutManager = NSLayoutManager()
         let containerSize = CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude)

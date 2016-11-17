@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Theme {
+public struct Theme {
     /// The body style for the Notepad editor.
     var body: Style = Style()
     /// The background color of the Notepad.

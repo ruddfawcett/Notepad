@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Style {
+public struct Style {
     var regex: NSRegularExpression!
     var attributes: [String: AnyObject] = [:]
 

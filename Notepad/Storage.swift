@@ -9,13 +9,13 @@
 
 import UIKit
 
-class Storage: NSTextStorage {
+public class Storage: NSTextStorage {
     /// The Theme for the Notepad.
     var theme: Theme!
 
     /// The mutable attributed string behind the entire editor.
     var backingStore = NSMutableAttributedString()
-    override var string: String {
+    override public var string: String {
         get {
             return backingStore.string
         }
@@ -25,7 +25,7 @@ class Storage: NSTextStorage {
         super.init()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -35,7 +35,7 @@ class Storage: NSTextStorage {
     /// - parameter range:    The range to find attributes for.
     ///
     /// - returns: The attributes on a String within a certain range.
-    override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [String : Any] {
+    override public func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [String : Any] {
         return backingStore.attributes(at: location, effectiveRange: range)
     }
 
@@ -43,7 +43,7 @@ class Storage: NSTextStorage {
     ///
     /// - parameter range: The range to replace.
     /// - parameter str:   The new string to replace the range with.
-    override func replaceCharacters(in range: NSRange, with str: String) {
+    override public func replaceCharacters(in range: NSRange, with str: String) {
         self.beginEditing()
         backingStore.replaceCharacters(in: range, with: str)
         self.edited([.editedCharacters, .editedAttributes], range: range, changeInLength: str.characters.count - range.length)
@@ -54,7 +54,7 @@ class Storage: NSTextStorage {
     ///
     /// - parameter attrs: The attributes to add to the string for the range.
     /// - parameter range: The range in which to add attributes.
-    override func setAttributes(_ attrs: [String : Any]?, range: NSRange) {
+    override public func setAttributes(_ attrs: [String : Any]?, range: NSRange) {
         self.beginEditing()
         backingStore.setAttributes(attrs, range: range)
         self.edited(.editedAttributes, range: range, changeInLength: 0)
@@ -62,7 +62,7 @@ class Storage: NSTextStorage {
     }
 
     /// Processes any edits made to the text in the editor.
-    override func processEditing() {
+    override public func processEditing() {
         let backingString = backingStore.string
         let nsRange = backingString.range(from: NSMakeRange(NSMaxRange(editedRange), 0))!
         let indexRange = backingString.lineRange(for: nsRange)
