@@ -26,7 +26,7 @@ public struct Theme {
     ///
     /// - returns: The Theme.
     init(_ name: String) {
-        if let path = Bundle(for: object_getClass(self)).path(forResource: name, ofType: "json") {
+        if let path = Bundle(for: object_getClass(self)).path(forResource: "Notepad.framework/themes/\(name)", ofType: "json") {
             if let data = convertFile(path) {
                 configure(data)
             }

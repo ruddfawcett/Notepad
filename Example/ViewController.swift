@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Notepad
 
 class ViewController: UIViewController {
 

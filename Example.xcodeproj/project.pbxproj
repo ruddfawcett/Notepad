@@ -11,25 +11,50 @@
 		F1730EBD1DAEA6BE00E2BB0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1730EBB1DAEA6BE00E2BB0B /* Main.storyboard */; };
 		F1730EBF1DAEA6BE00E2BB0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1730EBE1DAEA6BE00E2BB0B /* Assets.xcassets */; };
 		F1730EC21DAEA6BE00E2BB0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1730EC01DAEA6BE00E2BB0B /* LaunchScreen.storyboard */; };
+		F1ABABED1DDE923E00E11B6B /* Notepad.h in Headers */ = {isa = PBXBuildFile; fileRef = F1ABABEB1DDE923E00E11B6B /* Notepad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABF01DDE923E00E11B6B /* Notepad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1ABABE91DDE923E00E11B6B /* Notepad.framework */; };
+		F1ABABF11DDE923E00E11B6B /* Notepad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1ABABE91DDE923E00E11B6B /* Notepad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F1ABABF61DDE927000E11B6B /* Element.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA861DB2C74300D38E22 /* Element.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABF71DDE927200E11B6B /* Extensions.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA871DB2C74300D38E22 /* Extensions.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABF81DDE927400E11B6B /* Notepad.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA881DB2C74300D38E22 /* Notepad.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABF91DDE927600E11B6B /* Storage.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA891DB2C74300D38E22 /* Storage.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABFA1DDE927900E11B6B /* Style.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA8A1DB2C74300D38E22 /* Style.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABFB1DDE927B00E11B6B /* Theme.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA8B1DB2C74300D38E22 /* Theme.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABFC1DDE927E00E11B6B /* themes in Resources */ = {isa = PBXBuildFile; fileRef = F1ABABC11DDE916100E11B6B /* themes */; };
 		F1B9AA961DB2C74300D38E22 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA861DB2C74300D38E22 /* Element.swift */; };
 		F1B9AA971DB2C74300D38E22 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA871DB2C74300D38E22 /* Extensions.swift */; };
 		F1B9AA981DB2C74300D38E22 /* Notepad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA881DB2C74300D38E22 /* Notepad.swift */; };
 		F1B9AA991DB2C74300D38E22 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA891DB2C74300D38E22 /* Storage.swift */; };
 		F1B9AA9A1DB2C74300D38E22 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA8A1DB2C74300D38E22 /* Style.swift */; };
 		F1B9AA9B1DB2C74300D38E22 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA8B1DB2C74300D38E22 /* Theme.swift */; };
-		F1B9AA9C1DB2C74300D38E22 /* base16-tomorrow-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B9AA8D1DB2C74300D38E22 /* base16-tomorrow-dark.json */; };
-		F1B9AA9D1DB2C74300D38E22 /* base16-tomorrow-light.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B9AA8E1DB2C74300D38E22 /* base16-tomorrow-light.json */; };
-		F1B9AA9E1DB2C74300D38E22 /* blues-clues.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B9AA8F1DB2C74300D38E22 /* blues-clues.json */; };
-		F1B9AA9F1DB2C74300D38E22 /* one-dark-custom.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B9AA901DB2C74300D38E22 /* one-dark-custom.json */; };
-		F1B9AAA01DB2C74300D38E22 /* one-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B9AA911DB2C74300D38E22 /* one-dark.json */; };
-		F1B9AAA11DB2C74300D38E22 /* one-light-custom.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B9AA921DB2C74300D38E22 /* one-light-custom.json */; };
-		F1B9AAA21DB2C74300D38E22 /* one-light.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B9AA931DB2C74300D38E22 /* one-light.json */; };
-		F1B9AAA31DB2C74300D38E22 /* solarized-dark.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B9AA941DB2C74300D38E22 /* solarized-dark.json */; };
-		F1B9AAA41DB2C74300D38E22 /* solarized-light.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B9AA951DB2C74300D38E22 /* solarized-light.json */; };
 		F1C0E9651DB17D5700DDE5EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C0E9641DB17D5700DDE5EE /* ViewController.swift */; };
 		F1C0E9741DB292C600DDE5EE /* tests.md in Resources */ = {isa = PBXBuildFile; fileRef = F1C0E9731DB292C600DDE5EE /* tests.md */; };
 		F1C0E9781DB2A00600DDE5EE /* description.md in Resources */ = {isa = PBXBuildFile; fileRef = F1C0E9771DB2A00600DDE5EE /* description.md */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1ABABEE1DDE923E00E11B6B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1730EAC1DAEA6BE00E2BB0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1ABABE81DDE923E00E11B6B;
+			remoteInfo = Notepad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F1ABABDB1DDE91B100E11B6B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F1ABABF11DDE923E00E11B6B /* Notepad.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F1730EB41DAEA6BE00E2BB0B /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,21 +63,16 @@
 		F1730EBE1DAEA6BE00E2BB0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1730EC11DAEA6BE00E2BB0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1730EC31DAEA6BE00E2BB0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1ABABC11DDE916100E11B6B /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = themes; sourceTree = "<group>"; };
+		F1ABABE91DDE923E00E11B6B /* Notepad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Notepad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1ABABEB1DDE923E00E11B6B /* Notepad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notepad.h; sourceTree = "<group>"; };
+		F1ABABEC1DDE923E00E11B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1B9AA861DB2C74300D38E22 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		F1B9AA871DB2C74300D38E22 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F1B9AA881DB2C74300D38E22 /* Notepad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notepad.swift; sourceTree = "<group>"; };
 		F1B9AA891DB2C74300D38E22 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F1B9AA8A1DB2C74300D38E22 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		F1B9AA8B1DB2C74300D38E22 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		F1B9AA8D1DB2C74300D38E22 /* base16-tomorrow-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "base16-tomorrow-dark.json"; sourceTree = "<group>"; };
-		F1B9AA8E1DB2C74300D38E22 /* base16-tomorrow-light.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "base16-tomorrow-light.json"; sourceTree = "<group>"; };
-		F1B9AA8F1DB2C74300D38E22 /* blues-clues.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "blues-clues.json"; sourceTree = "<group>"; };
-		F1B9AA901DB2C74300D38E22 /* one-dark-custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "one-dark-custom.json"; sourceTree = "<group>"; };
-		F1B9AA911DB2C74300D38E22 /* one-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "one-dark.json"; sourceTree = "<group>"; };
-		F1B9AA921DB2C74300D38E22 /* one-light-custom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "one-light-custom.json"; sourceTree = "<group>"; };
-		F1B9AA931DB2C74300D38E22 /* one-light.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "one-light.json"; sourceTree = "<group>"; };
-		F1B9AA941DB2C74300D38E22 /* solarized-dark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "solarized-dark.json"; sourceTree = "<group>"; };
-		F1B9AA951DB2C74300D38E22 /* solarized-light.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "solarized-light.json"; sourceTree = "<group>"; };
 		F1C0E9641DB17D5700DDE5EE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F1C0E9731DB292C600DDE5EE /* tests.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = tests.md; sourceTree = "<group>"; };
 		F1C0E9771DB2A00600DDE5EE /* description.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = description.md; sourceTree = "<group>"; };
@@ -60,6 +80,14 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		F1730EB11DAEA6BE00E2BB0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1ABABF01DDE923E00E11B6B /* Notepad.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1ABABE51DDE923E00E11B6B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				F1730EB61DAEA6BE00E2BB0B /* Example */,
+				F1ABABEA1DDE923E00E11B6B /* Notepad */,
 				F1730EB51DAEA6BE00E2BB0B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F1730EB41DAEA6BE00E2BB0B /* Example.app */,
+				F1ABABE91DDE923E00E11B6B /* Notepad.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,46 +122,56 @@
 				F1C0E9641DB17D5700DDE5EE /* ViewController.swift */,
 				F1C0E9731DB292C600DDE5EE /* tests.md */,
 				F1C0E9771DB2A00600DDE5EE /* description.md */,
-				F1B9AA851DB2C74300D38E22 /* Notepad */,
-				F1730EBB1DAEA6BE00E2BB0B /* Main.storyboard */,
-				F1730EBE1DAEA6BE00E2BB0B /* Assets.xcassets */,
-				F1730EC01DAEA6BE00E2BB0B /* LaunchScreen.storyboard */,
-				F1730EC31DAEA6BE00E2BB0B /* Info.plist */,
+				F1ABABF51DDE925900E11B6B /* Extra */,
 			);
 			path = Example;
 			sourceTree = "<group>";
 		};
-		F1B9AA851DB2C74300D38E22 /* Notepad */ = {
+		F1ABABEA1DDE923E00E11B6B /* Notepad */ = {
 			isa = PBXGroup;
 			children = (
+				F1ABABC11DDE916100E11B6B /* themes */,
 				F1B9AA861DB2C74300D38E22 /* Element.swift */,
 				F1B9AA871DB2C74300D38E22 /* Extensions.swift */,
 				F1B9AA881DB2C74300D38E22 /* Notepad.swift */,
 				F1B9AA891DB2C74300D38E22 /* Storage.swift */,
 				F1B9AA8A1DB2C74300D38E22 /* Style.swift */,
 				F1B9AA8B1DB2C74300D38E22 /* Theme.swift */,
-				F1B9AA8C1DB2C74300D38E22 /* themes */,
+				F1ABABEB1DDE923E00E11B6B /* Notepad.h */,
+				F1ABABEC1DDE923E00E11B6B /* Info.plist */,
 			);
 			path = Notepad;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
-		F1B9AA8C1DB2C74300D38E22 /* themes */ = {
+		F1ABABF51DDE925900E11B6B /* Extra */ = {
 			isa = PBXGroup;
 			children = (
-				F1B9AA8D1DB2C74300D38E22 /* base16-tomorrow-dark.json */,
-				F1B9AA8E1DB2C74300D38E22 /* base16-tomorrow-light.json */,
-				F1B9AA8F1DB2C74300D38E22 /* blues-clues.json */,
-				F1B9AA901DB2C74300D38E22 /* one-dark-custom.json */,
-				F1B9AA911DB2C74300D38E22 /* one-dark.json */,
-				F1B9AA921DB2C74300D38E22 /* one-light-custom.json */,
-				F1B9AA931DB2C74300D38E22 /* one-light.json */,
-				F1B9AA941DB2C74300D38E22 /* solarized-dark.json */,
-				F1B9AA951DB2C74300D38E22 /* solarized-light.json */,
+				F1730EBB1DAEA6BE00E2BB0B /* Main.storyboard */,
+				F1730EBE1DAEA6BE00E2BB0B /* Assets.xcassets */,
+				F1730EC01DAEA6BE00E2BB0B /* LaunchScreen.storyboard */,
+				F1730EC31DAEA6BE00E2BB0B /* Info.plist */,
 			);
-			path = themes;
+			name = Extra;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F1ABABE61DDE923E00E11B6B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1ABABED1DDE923E00E11B6B /* Notepad.h in Headers */,
+				F1ABABF61DDE927000E11B6B /* Element.swift in Headers */,
+				F1ABABF71DDE927200E11B6B /* Extensions.swift in Headers */,
+				F1ABABF81DDE927400E11B6B /* Notepad.swift in Headers */,
+				F1ABABF91DDE927600E11B6B /* Storage.swift in Headers */,
+				F1ABABFA1DDE927900E11B6B /* Style.swift in Headers */,
+				F1ABABFB1DDE927B00E11B6B /* Theme.swift in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		F1730EB31DAEA6BE00E2BB0B /* Example */ = {
@@ -141,15 +181,35 @@
 				F1730EB01DAEA6BE00E2BB0B /* Sources */,
 				F1730EB11DAEA6BE00E2BB0B /* Frameworks */,
 				F1730EB21DAEA6BE00E2BB0B /* Resources */,
+				F1ABABDB1DDE91B100E11B6B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F1ABABEF1DDE923E00E11B6B /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
 			productReference = F1730EB41DAEA6BE00E2BB0B /* Example.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F1ABABE81DDE923E00E11B6B /* Notepad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1ABABF21DDE923E00E11B6B /* Build configuration list for PBXNativeTarget "Notepad" */;
+			buildPhases = (
+				F1ABABE41DDE923E00E11B6B /* Sources */,
+				F1ABABE51DDE923E00E11B6B /* Frameworks */,
+				F1ABABE61DDE923E00E11B6B /* Headers */,
+				F1ABABE71DDE923E00E11B6B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Notepad;
+			productName = Notepad;
+			productReference = F1ABABE91DDE923E00E11B6B /* Notepad.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -165,6 +225,10 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = TKRZ2F6UEQ;
 						LastSwiftMigration = 0800;
+					};
+					F1ABABE81DDE923E00E11B6B = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -182,6 +246,7 @@
 			projectRoot = "";
 			targets = (
 				F1730EB31DAEA6BE00E2BB0B /* Example */,
+				F1ABABE81DDE923E00E11B6B /* Notepad */,
 			);
 		};
 /* End PBXProject section */
@@ -191,20 +256,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B9AA9C1DB2C74300D38E22 /* base16-tomorrow-dark.json in Resources */,
 				F1730EC21DAEA6BE00E2BB0B /* LaunchScreen.storyboard in Resources */,
-				F1B9AAA11DB2C74300D38E22 /* one-light-custom.json in Resources */,
 				F1C0E9781DB2A00600DDE5EE /* description.md in Resources */,
-				F1B9AA9F1DB2C74300D38E22 /* one-dark-custom.json in Resources */,
-				F1B9AAA21DB2C74300D38E22 /* one-light.json in Resources */,
 				F1C0E9741DB292C600DDE5EE /* tests.md in Resources */,
-				F1B9AA9E1DB2C74300D38E22 /* blues-clues.json in Resources */,
-				F1B9AA9D1DB2C74300D38E22 /* base16-tomorrow-light.json in Resources */,
 				F1730EBF1DAEA6BE00E2BB0B /* Assets.xcassets in Resources */,
-				F1B9AAA01DB2C74300D38E22 /* one-dark.json in Resources */,
-				F1B9AAA31DB2C74300D38E22 /* solarized-dark.json in Resources */,
-				F1B9AAA41DB2C74300D38E22 /* solarized-light.json in Resources */,
 				F1730EBD1DAEA6BE00E2BB0B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1ABABE71DDE923E00E11B6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1ABABFC1DDE927E00E11B6B /* themes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +290,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1ABABE41DDE923E00E11B6B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1ABABEF1DDE923E00E11B6B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1ABABE81DDE923E00E11B6B /* Notepad */;
+			targetProxy = F1ABABEE1DDE923E00E11B6B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F1730EBB1DAEA6BE00E2BB0B /* Main.storyboard */ = {
@@ -341,6 +420,7 @@
 		F1730EC71DAEA6BE00E2BB0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -354,6 +434,7 @@
 		F1730EC81DAEA6BE00E2BB0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -361,6 +442,55 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F1ABABF31DDE923E00E11B6B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Notepad/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruddfawcett.Notepad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F1ABABF41DDE923E00E11B6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Notepad/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ruddfawcett.Notepad;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -384,6 +514,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F1ABABF21DDE923E00E11B6B /* Build configuration list for PBXNativeTarget "Notepad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1ABABF31DDE923E00E11B6B /* Debug */,
+				F1ABABF41DDE923E00E11B6B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,7 +11,7 @@ import Foundation
 
 /// A String type enum to keep track of the different elements we're tracking with regex.
 public enum Element: String {
-    case unknown = ""
+    case unknown = "x^"
 
     case h1 = "^(\\#[^\\#](.*))$"
     case h2 = "^(\\#{2}(.*))$"
