@@ -5,7 +5,7 @@
 ## Usage
 
 ```swift
-let notepad = Notepad(view.bounds, themeFile: "one-dark")
+let notepad = Notepad(frame: view.bounds, themeFile: "one-dark")
 view.addSubview(notepad)
 ```
 Notepad is just like any other UITextView, but you need to use the convenience initializer in order to use the themes. To create a new theme, copy one of the existing themes and edit the JSON.
