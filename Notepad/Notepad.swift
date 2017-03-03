@@ -18,7 +18,7 @@ public class Notepad: UITextView {
     /// - parameter themeFile: The name of the theme file to use.
     ///
     /// - returns: A new Notepad.
-    convenience init(_ frame: CGRect, themeFile: String) {
+    convenience public init(_ frame: CGRect, themeFile: String) {
         self.init(frame: frame, textContainer: nil)
         self.storage.theme = Theme(themeFile)
         self.backgroundColor = self.storage.theme.backgroundColor
