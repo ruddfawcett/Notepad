@@ -26,13 +26,28 @@ public struct Theme {
     ///
     /// - returns: The Theme.
     init(_ name: String) {
-        if let path = Bundle(for: object_getClass(self)).path(forResource: "Notepad.framework/themes/\(name)", ofType: "json") {
-            if let data = convertFile(path) {
-                configure(data)
-            }
+        let bundle = Bundle(for: object_getClass(self))
+        
+        let path: String
+        
+        if let path1 = bundle.path(forResource: "Notepad.framework/themes/\(name)", ofType: "json") {
+            
+            path = path1
+        }
+        else if let path2 = bundle.path(forResource: "Notepad.framework/\(name)", ofType: "json") {
+            
+            path = path2
         }
         else {
+            
             print("[Notepad] Unable to load your theme file.")
+            
+            return
+        }
+        
+        if let data = convertFile(path) {
+            
+            configure(data)
         }
     }
 
