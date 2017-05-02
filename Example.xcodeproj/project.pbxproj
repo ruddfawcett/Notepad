@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38F8A6431EA6DE9500FF586D /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA861DB2C74300D38E22 /* Element.swift */; };
-		38F8A6441EA6DE9500FF586D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA871DB2C74300D38E22 /* Extensions.swift */; };
-		38F8A6451EA6DE9500FF586D /* Notepad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA881DB2C74300D38E22 /* Notepad.swift */; };
-		38F8A6461EA6DE9500FF586D /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA891DB2C74300D38E22 /* Storage.swift */; };
-		38F8A6471EA6DE9500FF586D /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA8A1DB2C74300D38E22 /* Style.swift */; };
-		38F8A6481EA6DE9500FF586D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA8B1DB2C74300D38E22 /* Theme.swift */; };
 		F1730EB81DAEA6BE00E2BB0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1730EB71DAEA6BE00E2BB0B /* AppDelegate.swift */; };
 		F1730EBD1DAEA6BE00E2BB0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1730EBB1DAEA6BE00E2BB0B /* Main.storyboard */; };
 		F1730EBF1DAEA6BE00E2BB0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1730EBE1DAEA6BE00E2BB0B /* Assets.xcassets */; };
@@ -20,6 +14,12 @@
 		F1ABABED1DDE923E00E11B6B /* Notepad.h in Headers */ = {isa = PBXBuildFile; fileRef = F1ABABEB1DDE923E00E11B6B /* Notepad.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1ABABF01DDE923E00E11B6B /* Notepad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1ABABE91DDE923E00E11B6B /* Notepad.framework */; };
 		F1ABABF11DDE923E00E11B6B /* Notepad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1ABABE91DDE923E00E11B6B /* Notepad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F1ABABF61DDE927000E11B6B /* Element.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA861DB2C74300D38E22 /* Element.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABF71DDE927200E11B6B /* Extensions.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA871DB2C74300D38E22 /* Extensions.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABF81DDE927400E11B6B /* Notepad.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA881DB2C74300D38E22 /* Notepad.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABF91DDE927600E11B6B /* Storage.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA891DB2C74300D38E22 /* Storage.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABFA1DDE927900E11B6B /* Style.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA8A1DB2C74300D38E22 /* Style.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1ABABFB1DDE927B00E11B6B /* Theme.swift in Headers */ = {isa = PBXBuildFile; fileRef = F1B9AA8B1DB2C74300D38E22 /* Theme.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1ABABFC1DDE927E00E11B6B /* themes in Resources */ = {isa = PBXBuildFile; fileRef = F1ABABC11DDE916100E11B6B /* themes */; };
 		F1B9AA961DB2C74300D38E22 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA861DB2C74300D38E22 /* Element.swift */; };
 		F1B9AA971DB2C74300D38E22 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA871DB2C74300D38E22 /* Extensions.swift */; };
@@ -162,6 +162,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1ABABED1DDE923E00E11B6B /* Notepad.h in Headers */,
+				F1ABABF61DDE927000E11B6B /* Element.swift in Headers */,
+				F1ABABF71DDE927200E11B6B /* Extensions.swift in Headers */,
+				F1ABABF81DDE927400E11B6B /* Notepad.swift in Headers */,
+				F1ABABF91DDE927600E11B6B /* Storage.swift in Headers */,
+				F1ABABFA1DDE927900E11B6B /* Style.swift in Headers */,
+				F1ABABFB1DDE927B00E11B6B /* Theme.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,12 +294,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F8A6431EA6DE9500FF586D /* Element.swift in Sources */,
-				38F8A6441EA6DE9500FF586D /* Extensions.swift in Sources */,
-				38F8A6451EA6DE9500FF586D /* Notepad.swift in Sources */,
-				38F8A6461EA6DE9500FF586D /* Storage.swift in Sources */,
-				38F8A6471EA6DE9500FF586D /* Style.swift in Sources */,
-				38F8A6481EA6DE9500FF586D /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +522,6 @@
 				F1ABABF41DDE923E00E11B6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
