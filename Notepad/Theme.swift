@@ -25,7 +25,7 @@ public struct Theme {
     /// - parameter name: The name of the JSON theme file.
     ///
     /// - returns: The Theme.
-    init(_ name: String) {
+    public init(_ name: String) {
         let bundle = Bundle(for: object_getClass(self))
         
         let path: String
@@ -46,7 +46,12 @@ public struct Theme {
         }
         
         if let data = convertFile(path) {
-            
+            configure(data)
+        }
+    }
+    
+    public init(themePath: String) {
+        if let data = convertFile(themePath) {
             configure(data)
         }
     }

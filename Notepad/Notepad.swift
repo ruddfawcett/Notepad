@@ -25,6 +25,14 @@ public class Notepad: UITextView {
         self.tintColor = self.storage.theme.tintColor
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
+    
+    convenience public init(frame: CGRect, theme: Theme) {
+        self.init(frame: frame, textContainer: nil)
+        self.storage.theme = theme
+        self.backgroundColor = self.storage.theme.backgroundColor
+        self.tintColor = self.storage.theme.tintColor
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
 
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         let layoutManager = NSLayoutManager()
