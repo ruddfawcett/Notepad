@@ -46,7 +46,12 @@ public struct Theme {
         }
         
         if let data = convertFile(path) {
-            
+            configure(data)
+        }
+    }
+    
+    init(themePath: String) {
+        if let data = convertFile(themePath) {
             configure(data)
         }
     }
