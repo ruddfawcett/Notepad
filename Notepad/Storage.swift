@@ -14,7 +14,16 @@
 
 public class Storage: NSTextStorage {
     /// The Theme for the Notepad.
-    public var theme: Theme!
+    public var theme: Theme? {
+        didSet {
+            let wholeRange = NSRange(location: 0, length: (self.string as NSString).length)
+
+            self.beginEditing()
+            self.applyStyles(wholeRange)
+            self.edited(.editedAttributes, range: wholeRange, changeInLength: 0)
+            self.endEditing()
+        }
+    }
 
     /// The underlying text storage implementation.
     var backingStore = NSTextStorage()
@@ -86,6 +95,8 @@ public class Storage: NSTextStorage {
     ///
     /// - parameter range: The range in which to apply styles.
     func applyStyles(_ range: NSRange) {
+        guard let theme = self.theme else { return }
+
         let backingString = backingStore.string
         backingStore.setAttributes(theme.body.attributes, range: range)
 

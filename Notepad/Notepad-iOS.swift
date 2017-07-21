@@ -21,17 +21,18 @@ public class Notepad: UITextView {
     /// - returns: A new Notepad.
     convenience public init(frame: CGRect, themeFile: String) {
         self.init(frame: frame, textContainer: nil)
-        self.storage.theme = Theme(themeFile)
-        self.backgroundColor = self.storage.theme.backgroundColor
-        self.tintColor = self.storage.theme.tintColor
+        let theme = Theme(themeFile)
+        self.storage.theme = theme
+        self.backgroundColor = theme.backgroundColor
+        self.tintColor = theme.tintColor
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
     convenience public init(frame: CGRect, theme: Theme) {
         self.init(frame: frame, textContainer: nil)
         self.storage.theme = theme
-        self.backgroundColor = self.storage.theme.backgroundColor
-        self.tintColor = self.storage.theme.tintColor
+        self.backgroundColor = theme.backgroundColor
+        self.tintColor = theme.tintColor
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
 
