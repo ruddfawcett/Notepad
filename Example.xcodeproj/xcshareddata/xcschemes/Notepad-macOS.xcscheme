@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "504B70131F21D7CB002F9D8E"
-               BuildableName = "NotepadOSX.framework"
-               BlueprintName = "NotepadOSX"
+               BuildableName = "Notepad macOS.framework"
+               BlueprintName = "Notepad macOS"
                ReferencedContainer = "container:Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "504B70131F21D7CB002F9D8E"
-            BuildableName = "NotepadOSX.framework"
-            BlueprintName = "NotepadOSX"
+            BuildableName = "Notepad macOS.framework"
+            BlueprintName = "Notepad macOS"
             ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "504B70131F21D7CB002F9D8E"
-            BuildableName = "NotepadOSX.framework"
-            BlueprintName = "NotepadOSX"
+            BuildableName = "Notepad macOS.framework"
+            BlueprintName = "Notepad macOS"
             ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

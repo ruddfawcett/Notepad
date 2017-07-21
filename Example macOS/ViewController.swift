@@ -7,21 +7,28 @@
 //
 
 import Cocoa
+import Notepad
 
 class ViewController: NSViewController {
+
+    @IBOutlet var textView: NSTextView!
+    let storage = Storage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        let theme = Theme("one-dark")
+        storage.theme = theme
+        textView.backgroundColor = theme.backgroundColor
+        textView.insertionPointColor = theme.tintColor
+        textView.layoutManager?.replaceTextStorage(storage)
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
+        if let testFile = Bundle.main.path(forResource: "tests", ofType: "md"),
+            let text = try? String(contentsOfFile: testFile) {
+
+            textView.string = text
+        } else {
+            print("Unable to load demo text.")
         }
     }
-
-
 }
-
