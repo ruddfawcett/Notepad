@@ -6,28 +6,47 @@
 //  Copyright © 2016 Rudd Fawcett. All rights reserved.
 //
 
-
-import UIKit
+#if os(iOS)
+    import UIKit
+#elseif os(macOS)
+    import AppKit
+#endif
 
 public class Storage: NSTextStorage {
     /// The Theme for the Notepad.
-    var theme: Theme!
+    public var theme: Theme? {
+        didSet {
+            let wholeRange = NSRange(location: 0, length: (self.string as NSString).length)
 
-    /// The mutable attributed string behind the entire editor.
-    var backingStore = NSMutableAttributedString()
+            self.beginEditing()
+            self.applyStyles(wholeRange)
+            self.edited(.editedAttributes, range: wholeRange, changeInLength: 0)
+            self.endEditing()
+        }
+    }
+
+    /// The underlying text storage implementation.
+    var backingStore = NSTextStorage()
+
     override public var string: String {
         get {
             return backingStore.string
         }
     }
 
-    override init() {
+    override public init() {
         super.init()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    #if os(macOS)
+    required public init?(pasteboardPropertyList propertyList: Any, ofType type: String) {
+        fatalError("init(pasteboardPropertyList:ofType:) has not been implemented")
+    }
+    #endif
 
     /// Finds attributes within a given range on a String.
     ///
@@ -76,14 +95,15 @@ public class Storage: NSTextStorage {
     ///
     /// - parameter range: The range in which to apply styles.
     func applyStyles(_ range: NSRange) {
+        guard let theme = self.theme else { return }
+
         let backingString = backingStore.string
-        setAttributes(theme.body.attributes, range: range)
+        backingStore.setAttributes(theme.body.attributes, range: range)
 
         for (style) in theme.styles {
             style.regex.enumerateMatches(in: backingString, options: .withoutAnchoringBounds, range: range, using: { (match, flags, stop) in
-                if match != nil {
-                    addAttributes(style.attributes, range: match!.rangeAt(0))
-                }
+                guard let match = match else { return }
+                backingStore.addAttributes(style.attributes, range: match.rangeAt(0))
             })
         }
     }

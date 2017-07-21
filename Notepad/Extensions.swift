@@ -6,16 +6,19 @@
 //  Copyright © 2016 Rudd Fawcett. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
+#if os(iOS)
+    import struct UIKit.CGFloat
+#elseif os(macOS)
+    import struct AppKit.CGFloat
+#endif
 
-extension UIColor {
+extension UniversalColor {
     /// Converts a hex color code to UIColor.
     /// http://stackoverflow.com/a/33397427/6669540
     ///
     /// - parameter hexString: The hex code.
-    ///
-    /// - returns: The UIColor.
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()

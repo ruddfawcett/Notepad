@@ -12,6 +12,61 @@ Notepad is just like any other UITextView, but you need to use the convenience i
 
 Check out the [Xcode project](Example.xcodeproj) for an [example](Example). For full documentation read [the code](Notepad/Notepad.swift).
 
+### Extending an Existing Text View with Notepad Features
+
+If you cannot work with the `Notepad` subclass directly for some reason, you can set up an existing `UITextView` or `NSTextView` on your own.
+
+For iOS, you have to initialize all TextKit components yourself. Take the following as a blueprint where you can swap in custom objects:
+
+```swift
+class ViewController: UIViewController {
+    var textView: UITextView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let containerSize = CGSize(width: self.view.bounds.width, height: CGFloat.greatestFiniteMagnitude)
+        let container = NSTextContainer(size: containerSize)
+        container.widthTracksTextView = true
+
+        let layoutManager = NSLayoutManager()
+        layoutManager.addTextContainer(container)
+
+        let storage = Storage()
+        let theme = Theme("one-dark")
+        storage.theme = theme
+        storage.addLayoutManager(layoutManager)
+
+        let editor = UITextView(frame: self.view.bounds, textContainer: container)
+        editor.backgroundColor = theme.backgroundColor
+        editor.tintColor = theme.tintColor
+        editor.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+}
+
+
+```
+
+And for macOS:
+
+```swift
+class ViewController: NSViewController {
+    @IBOutlet var textView: NSTextView!
+    let storage = Storage()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let theme = Theme("one-dark")
+        storage.theme = theme
+        textView.backgroundColor = theme.backgroundColor
+        textView.insertionPointColor = theme.tintColor
+        textView.layoutManager?.replaceTextStorage(storage)
+    }
+}
+```
+
+
 ## Themes
 
 Take a look at all of the [themes and swatches](themes.md) when choosing the theme for your Notepad, or as inspiration for a new one.
