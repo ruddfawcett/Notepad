@@ -6,7 +6,7 @@
 //  Copyright © 2016 Rudd Fawcett. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public struct Style {
     var regex: NSRegularExpression!

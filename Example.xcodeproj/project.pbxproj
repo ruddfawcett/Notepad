@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		38F8A6431EA6DE9500FF586D /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA861DB2C74300D38E22 /* Element.swift */; };
 		38F8A6441EA6DE9500FF586D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA871DB2C74300D38E22 /* Extensions.swift */; };
-		38F8A6451EA6DE9500FF586D /* Notepad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA881DB2C74300D38E22 /* Notepad.swift */; };
+		38F8A6451EA6DE9500FF586D /* Notepad-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA881DB2C74300D38E22 /* Notepad-iOS.swift */; };
 		38F8A6461EA6DE9500FF586D /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA891DB2C74300D38E22 /* Storage.swift */; };
 		38F8A6471EA6DE9500FF586D /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA8A1DB2C74300D38E22 /* Style.swift */; };
 		38F8A6481EA6DE9500FF586D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA8B1DB2C74300D38E22 /* Theme.swift */; };
@@ -17,6 +17,9 @@
 		504B70051F21D051002F9D8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504B70041F21D051002F9D8E /* ViewController.swift */; };
 		504B70071F21D051002F9D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 504B70061F21D051002F9D8E /* Assets.xcassets */; };
 		504B700A1F21D051002F9D8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504B70081F21D051002F9D8E /* Main.storyboard */; };
+		504B70221F21D821002F9D8E /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA861DB2C74300D38E22 /* Element.swift */; };
+		504B70281F21D9A5002F9D8E /* UniversalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504B70271F21D9A5002F9D8E /* UniversalTypes.swift */; };
+		504B702A1F21DA30002F9D8E /* UniversalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504B70271F21D9A5002F9D8E /* UniversalTypes.swift */; };
 		F1730EB81DAEA6BE00E2BB0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1730EB71DAEA6BE00E2BB0B /* AppDelegate.swift */; };
 		F1730EBD1DAEA6BE00E2BB0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1730EBB1DAEA6BE00E2BB0B /* Main.storyboard */; };
 		F1730EBF1DAEA6BE00E2BB0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1730EBE1DAEA6BE00E2BB0B /* Assets.xcassets */; };
@@ -25,9 +28,8 @@
 		F1ABABF01DDE923E00E11B6B /* Notepad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1ABABE91DDE923E00E11B6B /* Notepad.framework */; };
 		F1ABABF11DDE923E00E11B6B /* Notepad.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1ABABE91DDE923E00E11B6B /* Notepad.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F1ABABFC1DDE927E00E11B6B /* themes in Resources */ = {isa = PBXBuildFile; fileRef = F1ABABC11DDE916100E11B6B /* themes */; };
-		F1B9AA961DB2C74300D38E22 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA861DB2C74300D38E22 /* Element.swift */; };
 		F1B9AA971DB2C74300D38E22 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA871DB2C74300D38E22 /* Extensions.swift */; };
-		F1B9AA981DB2C74300D38E22 /* Notepad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA881DB2C74300D38E22 /* Notepad.swift */; };
+		F1B9AA981DB2C74300D38E22 /* Notepad-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA881DB2C74300D38E22 /* Notepad-iOS.swift */; };
 		F1B9AA991DB2C74300D38E22 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA891DB2C74300D38E22 /* Storage.swift */; };
 		F1B9AA9A1DB2C74300D38E22 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA8A1DB2C74300D38E22 /* Style.swift */; };
 		F1B9AA9B1DB2C74300D38E22 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9AA8B1DB2C74300D38E22 /* Theme.swift */; };
@@ -67,6 +69,7 @@
 		504B70061F21D051002F9D8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		504B70091F21D051002F9D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		504B700B1F21D051002F9D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		504B70271F21D9A5002F9D8E /* UniversalTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalTypes.swift; sourceTree = "<group>"; };
 		F1730EB41DAEA6BE00E2BB0B /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1730EB71DAEA6BE00E2BB0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1730EBC1DAEA6BE00E2BB0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,7 +82,7 @@
 		F1ABABEC1DDE923E00E11B6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1B9AA861DB2C74300D38E22 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		F1B9AA871DB2C74300D38E22 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		F1B9AA881DB2C74300D38E22 /* Notepad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notepad.swift; sourceTree = "<group>"; };
+		F1B9AA881DB2C74300D38E22 /* Notepad-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notepad-iOS.swift"; sourceTree = "<group>"; };
 		F1B9AA891DB2C74300D38E22 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		F1B9AA8A1DB2C74300D38E22 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		F1B9AA8B1DB2C74300D38E22 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -164,7 +167,8 @@
 				F1ABABC11DDE916100E11B6B /* themes */,
 				F1B9AA861DB2C74300D38E22 /* Element.swift */,
 				F1B9AA871DB2C74300D38E22 /* Extensions.swift */,
-				F1B9AA881DB2C74300D38E22 /* Notepad.swift */,
+				504B70271F21D9A5002F9D8E /* UniversalTypes.swift */,
+				F1B9AA881DB2C74300D38E22 /* Notepad-iOS.swift */,
 				F1B9AA891DB2C74300D38E22 /* Storage.swift */,
 				F1B9AA8A1DB2C74300D38E22 /* Style.swift */,
 				F1B9AA8B1DB2C74300D38E22 /* Theme.swift */,
@@ -347,10 +351,11 @@
 			files = (
 				F1730EB81DAEA6BE00E2BB0B /* AppDelegate.swift in Sources */,
 				F1B9AA9B1DB2C74300D38E22 /* Theme.swift in Sources */,
+				504B70221F21D821002F9D8E /* Element.swift in Sources */,
 				F1C0E9651DB17D5700DDE5EE /* ViewController.swift in Sources */,
-				F1B9AA961DB2C74300D38E22 /* Element.swift in Sources */,
-				F1B9AA981DB2C74300D38E22 /* Notepad.swift in Sources */,
+				F1B9AA981DB2C74300D38E22 /* Notepad-iOS.swift in Sources */,
 				F1B9AA971DB2C74300D38E22 /* Extensions.swift in Sources */,
+				504B702A1F21DA30002F9D8E /* UniversalTypes.swift in Sources */,
 				F1B9AA9A1DB2C74300D38E22 /* Style.swift in Sources */,
 				F1B9AA991DB2C74300D38E22 /* Storage.swift in Sources */,
 			);
@@ -362,10 +367,11 @@
 			files = (
 				38F8A6431EA6DE9500FF586D /* Element.swift in Sources */,
 				38F8A6441EA6DE9500FF586D /* Extensions.swift in Sources */,
-				38F8A6451EA6DE9500FF586D /* Notepad.swift in Sources */,
+				38F8A6451EA6DE9500FF586D /* Notepad-iOS.swift in Sources */,
 				38F8A6461EA6DE9500FF586D /* Storage.swift in Sources */,
 				38F8A6471EA6DE9500FF586D /* Style.swift in Sources */,
 				38F8A6481EA6DE9500FF586D /* Theme.swift in Sources */,
+				504B70281F21D9A5002F9D8E /* UniversalTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

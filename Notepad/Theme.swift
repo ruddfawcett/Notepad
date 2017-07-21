@@ -6,15 +6,19 @@
 //  Copyright © 2016 Rudd Fawcett. All rights reserved.
 //
 
-import UIKit
+#if os(iOS)
+    import UIKit
+#elseif os(macOS)
+    import AppKit
+#endif
 
 public struct Theme {
     /// The body style for the Notepad editor.
     var body: Style = Style()
     /// The background color of the Notepad.
-    var backgroundColor: UIColor = UIColor.white
+    var backgroundColor: UniversalColor = UniversalColor.white
     /// The tint color (AKA cursor color) of the Notepad.
-    var tintColor: UIColor = UIColor.blue
+    var tintColor: UniversalColor = UniversalColor.blue
 
     /// All of the other styles for the Notepad editor.
     var styles: [Style] = []
@@ -72,8 +76,8 @@ public struct Theme {
             }
             else { // Create a default body font so other styles can inherit from it.
                 let attributes = [
-                    NSForegroundColorAttributeName: UIColor.black,
-                    NSFontAttributeName: UIFont.systemFont(ofSize: 15)
+                    NSForegroundColorAttributeName: UniversalColor.black,
+                    NSFontAttributeName: UniversalFont.systemFont(ofSize: 15)
                 ]
                 body = Style(element: .body, attributes: attributes)
             }
@@ -99,12 +103,12 @@ public struct Theme {
     mutating func configureEditor(_ attributes: [String: AnyObject]) {
         if let bgColor = attributes["backgroundColor"] {
             let value = bgColor as! String
-            backgroundColor = UIColor(hexString: value)
+            backgroundColor = UniversalColor(hexString: value)
         }
 
         if let tint = attributes["tintColor"] {
             let value = tint as! String
-            tintColor = UIColor(hexString: value)
+            tintColor = UniversalColor(hexString: value)
         }
     }
 
@@ -118,7 +122,7 @@ public struct Theme {
 
         if let color = attributes["color"] {
             let value = color as! String
-            final[NSForegroundColorAttributeName] = UIColor(hexString: value)
+            final[NSForegroundColorAttributeName] = UniversalColor(hexString: value)
         }
 
         if let font = attributes["font"] {
@@ -129,24 +133,24 @@ public struct Theme {
                 fontSize = size as! CGFloat
             }
             else {
-                let bodyFont: UIFont = body.attributes[NSFontAttributeName] as! UIFont
+                let bodyFont: UniversalFont = body.attributes[NSFontAttributeName] as! UniversalFont
                 fontSize = bodyFont.pointSize
             }
 
             if fontName == "System" {
-                final[NSFontAttributeName] = UIFont.systemFont(ofSize: fontSize)
+                final[NSFontAttributeName] = UniversalFont.systemFont(ofSize: fontSize)
             }
             else {
-                final[NSFontAttributeName] = UIFont(name: fontName, size: fontSize)
+                final[NSFontAttributeName] = UniversalFont(name: fontName, size: fontSize)
             }
         }
         else {
             // Just change font size (based on body font) if no font is specified for item.
             if let size = attributes["size"] {
-                let bodyFont: UIFont = body.attributes[NSFontAttributeName] as! UIFont
+                let bodyFont: UniversalFont = body.attributes[NSFontAttributeName] as! UniversalFont
                 let fontSize = size as! CGFloat
 
-                final[NSFontAttributeName] = UIFont(name: bodyFont.fontName, size: fontSize)
+                final[NSFontAttributeName] = UniversalFont(name: bodyFont.fontName, size: fontSize)
             }
         }
 

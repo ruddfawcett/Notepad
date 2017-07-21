@@ -6,10 +6,11 @@
 //  Copyright © 2016 Rudd Fawcett. All rights reserved.
 //
 
-
+#if os(iOS)
 import UIKit
 
 public class Notepad: UITextView {
+
     var storage: Storage = Storage()
 
     /// Creates a new Notepad.
@@ -56,3 +57,4 @@ public class Notepad: UITextView {
         storage.addLayoutManager(layoutManager)
     }
 }
+#endif

@@ -6,8 +6,11 @@
 //  Copyright © 2016 Rudd Fawcett. All rights reserved.
 //
 
-
-import UIKit
+#if os(iOS)
+    import UIKit
+#elseif os(macOS)
+    import AppKit
+#endif
 
 public class Storage: NSTextStorage {
     /// The Theme for the Notepad.
@@ -28,6 +31,12 @@ public class Storage: NSTextStorage {
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    #if os(macOS)
+    required public init?(pasteboardPropertyList propertyList: Any, ofType type: String) {
+        fatalError("init(pasteboardPropertyList:ofType:) has not been implemented")
+    }
+    #endif
 
     /// Finds attributes within a given range on a String.
     ///
