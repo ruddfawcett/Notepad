@@ -16,8 +16,9 @@ public class Storage: NSTextStorage {
     /// The Theme for the Notepad.
     public var theme: Theme!
 
-    /// The mutable attributed string behind the entire editor.
-    var backingStore = NSMutableAttributedString()
+    /// The underlying text storage implementation.
+    var backingStore = NSTextStorage()
+
     override public var string: String {
         get {
             return backingStore.string
