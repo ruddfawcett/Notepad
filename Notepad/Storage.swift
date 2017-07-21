@@ -14,7 +14,7 @@
 
 public class Storage: NSTextStorage {
     /// The Theme for the Notepad.
-    var theme: Theme!
+    public var theme: Theme!
 
     /// The mutable attributed string behind the entire editor.
     var backingStore = NSMutableAttributedString()
@@ -24,7 +24,7 @@ public class Storage: NSTextStorage {
         }
     }
 
-    override init() {
+    override public init() {
         super.init()
     }
 
