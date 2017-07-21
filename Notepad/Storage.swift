@@ -87,13 +87,12 @@ public class Storage: NSTextStorage {
     /// - parameter range: The range in which to apply styles.
     func applyStyles(_ range: NSRange) {
         let backingString = backingStore.string
-        setAttributes(theme.body.attributes, range: range)
+        backingStore.setAttributes(theme.body.attributes, range: range)
 
         for (style) in theme.styles {
             style.regex.enumerateMatches(in: backingString, options: .withoutAnchoringBounds, range: range, using: { (match, flags, stop) in
-                if match != nil {
-                    addAttributes(style.attributes, range: match!.rangeAt(0))
-                }
+                guard let match = match else { return }
+                backingStore.addAttributes(style.attributes, range: match.rangeAt(0))
             })
         }
     }
