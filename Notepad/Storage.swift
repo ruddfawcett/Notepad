@@ -37,11 +37,20 @@ public class Storage: NSTextStorage {
     override public init() {
         super.init()
     }
+    
+    override public init(attributedString attrStr: NSAttributedString) {
+        super.init(attributedString:attrStr)
+        backingStore.setAttributedString(attrStr)
+    }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    required public init(itemProviderData data: Data, typeIdentifier: String) throws {
+        fatalError("init(itemProviderData:typeIdentifier:) has not been implemented")
+    }
+    
     #if os(macOS)
     required public init?(pasteboardPropertyList propertyList: Any, ofType type: String) {
         fatalError("init(pasteboardPropertyList:ofType:) has not been implemented")
@@ -54,7 +63,7 @@ public class Storage: NSTextStorage {
     /// - parameter range:    The range to find attributes for.
     ///
     /// - returns: The attributes on a String within a certain range.
-    override public func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [String : Any] {
+    override public func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [NSAttributedStringKey : Any] {
         return backingStore.attributes(at: location, effectiveRange: range)
     }
 
@@ -73,7 +82,7 @@ public class Storage: NSTextStorage {
     ///
     /// - parameter attrs: The attributes to add to the string for the range.
     /// - parameter range: The range in which to add attributes.
-    override public func setAttributes(_ attrs: [String : Any]?, range: NSRange) {
+    override public func setAttributes(_ attrs: [NSAttributedStringKey : Any]?, range: NSRange) {
         self.beginEditing()
         backingStore.setAttributes(attrs, range: range)
         self.edited(.editedAttributes, range: range, changeInLength: 0)
@@ -103,7 +112,7 @@ public class Storage: NSTextStorage {
         for (style) in theme.styles {
             style.regex.enumerateMatches(in: backingString, options: .withoutAnchoringBounds, range: range, using: { (match, flags, stop) in
                 guard let match = match else { return }
-                backingStore.addAttributes(style.attributes, range: match.rangeAt(0))
+                backingStore.addAttributes(style.attributes, range: match.range(at: 0))
             })
         }
     }

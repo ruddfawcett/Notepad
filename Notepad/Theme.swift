@@ -30,7 +30,7 @@ public struct Theme {
     ///
     /// - returns: The Theme.
     public init(_ name: String) {
-        let bundle = Bundle(for: object_getClass(self))
+        let bundle = Bundle(for: object_getClass(self)!)
         
         let path: String
         
@@ -80,8 +80,8 @@ public struct Theme {
             }
             else { // Create a default body font so other styles can inherit from it.
                 let attributes = [
-                    NSForegroundColorAttributeName: UniversalColor.black,
-                    NSFontAttributeName: UniversalFont.systemFont(ofSize: 15)
+                    NSAttributedStringKey.foregroundColor: UniversalColor.black,
+                    NSAttributedStringKey.font: UniversalFont.systemFont(ofSize: 15)
                 ]
                 body = Style(element: .body, attributes: attributes)
             }
@@ -121,12 +121,12 @@ public struct Theme {
     /// - parameter attributes: The attributes to parse.
     ///
     /// - returns: The converted attribute/key constant pairings.
-    func parse(_ attributes: [String: AnyObject]) -> [String: AnyObject]? {
-        var final: [String: AnyObject] = [:]
+    func parse(_ attributes: [String: AnyObject]) -> [NSAttributedStringKey: AnyObject]? {
+        var final: [NSAttributedStringKey: AnyObject] = [:]
 
         if let color = attributes["color"] {
             let value = color as! String
-            final[NSForegroundColorAttributeName] = UniversalColor(hexString: value)
+            final[NSAttributedStringKey.foregroundColor] = UniversalColor(hexString: value)
         }
 
         if let font = attributes["font"] {
@@ -137,24 +137,24 @@ public struct Theme {
                 fontSize = size as! CGFloat
             }
             else {
-                let bodyFont: UniversalFont = body.attributes[NSFontAttributeName] as! UniversalFont
+                let bodyFont: UniversalFont = body.attributes[NSAttributedStringKey.font] as! UniversalFont
                 fontSize = bodyFont.pointSize
             }
 
             if fontName == "System" {
-                final[NSFontAttributeName] = UniversalFont.systemFont(ofSize: fontSize)
+                final[NSAttributedStringKey.font] = UniversalFont.systemFont(ofSize: fontSize)
             }
             else {
-                final[NSFontAttributeName] = UniversalFont(name: fontName, size: fontSize)
+                final[NSAttributedStringKey.font] = UniversalFont(name: fontName, size: fontSize)
             }
         }
         else {
             // Just change font size (based on body font) if no font is specified for item.
             if let size = attributes["size"] {
-                let bodyFont: UniversalFont = body.attributes[NSFontAttributeName] as! UniversalFont
+                let bodyFont: UniversalFont = body.attributes[NSAttributedStringKey.font] as! UniversalFont
                 let fontSize = size as! CGFloat
 
-                final[NSFontAttributeName] = UniversalFont(name: bodyFont.fontName, size: fontSize)
+                final[NSAttributedStringKey.font] = UniversalFont(name: bodyFont.fontName, size: fontSize)
             }
         }
 
