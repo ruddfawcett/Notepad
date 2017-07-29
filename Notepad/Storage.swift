@@ -74,7 +74,9 @@ public class Storage: NSTextStorage {
     override public func replaceCharacters(in range: NSRange, with str: String) {
         self.beginEditing()
         backingStore.replaceCharacters(in: range, with: str)
-        self.edited([.editedCharacters, .editedAttributes], range: range, changeInLength: str.characters.count - range.length)
+        let len = (str as NSString).length
+        let change = len - range.length
+        self.edited([.editedCharacters, .editedAttributes], range: range, changeInLength: change)
         self.endEditing()
     }
 
