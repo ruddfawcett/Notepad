@@ -1,0 +1,11 @@
+// Increment the build number whenever you modify the version string.
+VERSION_STRING = 0.2.5
+BUILD_NUMBER = 1
+
+PROJECT_NAME = Notepad
+BUNDLE_IDENTIFIER_BASE = com.ruddfawcett.$(PROJECT_NAME)
+
+IPHONEOS_DEPLOYMENT_TARGET = 11.0
+MACOSX_DEPLOYMENT_TARGET = 10.13
+
+APPLICATION_EXTENSION_API_ONLY = YES
