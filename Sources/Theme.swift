@@ -8,12 +8,8 @@
 
 #if os(iOS)
     import UIKit
-    
-    let BundleIdentifier = "com.ruddfawcett.Notepad.iOS"
 #elseif os(macOS)
     import AppKit
-    
-    let BundleIdentifier = "com.ruddfawcett.Notepad.macOS"
 #endif
 
 public struct Theme {
@@ -34,7 +30,7 @@ public struct Theme {
     ///
     /// - returns: The Theme.
     public init(_ name: String) {
-        let bundle = Bundle(identifier: BundleIdentifier)!
+        let bundle = Bundle(for: Notepad.self.classForCoder())
         
         guard let path = bundle.path(forResource: name, ofType: "json") else {
             print("[Notepad] Unable to load your theme file.")
