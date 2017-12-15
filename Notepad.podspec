@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = 'Notepad'
-    spec.version      = '0.2.5'
+    spec.version      = '0.2.6'
     spec.osx.deployment_target = "10.13"
     spec.ios.deployment_target = "11.0"
     spec.summary      = 'A simple Markdown editor'
