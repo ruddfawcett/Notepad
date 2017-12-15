@@ -1,24 +1,12 @@
-Pod::Spec.new do |s|
-  s.name             = 'Notepad'
-  s.version          = '0.2.4'
-  s.summary          = 'A themeable Markdown editor.'
-  s.description      = <<-DESC
-    Notepad gives your users the ability to write and edit Markdown directly in your app.
-
-    The editor is fully themeable with a JSON stylesheet.
-
-    Add it to your app with only a few lines of code.
-  DESC
-
-  s.homepage         = 'https://github.com/ruddfawcett/Notepad'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Rudd Fawcett' => 'rudd.fawcett@gmail.com' }
-  s.source           = { :git => 'https://github.com/ruddfawcett/Notepad.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/ruddfawcett'
-
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.11'
-
-  s.source_files = 'Notepad/*.swift'
-  s.resources    = 'Notepad/themes/*.json'
+Pod::Spec.new do |spec|
+    spec.name         = 'Notepad'
+    spec.version      = '0.2.7'
+    spec.osx.deployment_target = "10.13"
+    spec.ios.deployment_target = "11.0"
+    spec.summary      = 'A simple Markdown editor'
+    spec.author       = 'Rudd Fawcett, Thomas Bonk'
+    spec.homepage     = 'https://github.com/meandmymac-de/Notepad'
+    spec.license      = { :type => 'MIT', :file => 'LICENSE' }
+    spec.source       = { :git => 'https://github.com/meandmymac-de/Notepad.git', :tag => 'v0.2.7' }
+    spec.source_files = 'Sources/**/*.swift'
 end
