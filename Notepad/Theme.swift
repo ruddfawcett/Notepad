@@ -121,8 +121,8 @@ public struct Theme {
     /// - parameter attributes: The attributes to parse.
     ///
     /// - returns: The converted attribute/key constant pairings.
-    func parse(_ attributes: [String: AnyObject]) -> [NSAttributedStringKey: AnyObject]? {
-        var final: [NSAttributedStringKey: AnyObject] = [:]
+    func parse(_ attributes: [String: AnyObject]) -> [NSAttributedStringKey: Any]? {
+        var final: [NSAttributedStringKey: Any] = [:]
 
         if let color = attributes["color"] {
             let value = color as! String

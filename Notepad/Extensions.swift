@@ -24,7 +24,7 @@ extension UniversalColor {
         var int = UInt32()
         Scanner(string: hex).scanHexInt32(&int)
         let a, r, g, b: UInt32
-        switch hex.characters.count {
+        switch hex.count {
         case 3: // RGB (12-bit)
             (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
         case 6: // RGB (24-bit)
@@ -48,8 +48,8 @@ extension String {
     func nsRange(from range: Range<String.Index>) -> NSRange {
         let from = range.lowerBound.samePosition(in: utf16)
         let to = range.upperBound.samePosition(in: utf16)
-        return NSRange(location: utf16.distance(from: utf16.startIndex, to: from),
-                       length: utf16.distance(from: from, to: to))
+        return NSRange(location: utf16.distance(from: utf16.startIndex, to: from!),
+                       length: utf16.distance(from: from!, to: to!))
     }
 
     /// Converts a String to a NSRegularExpression.
