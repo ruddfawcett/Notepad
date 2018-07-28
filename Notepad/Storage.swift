@@ -55,6 +55,10 @@ public class Storage: NSTextStorage {
     required public init?(pasteboardPropertyList propertyList: Any, ofType type: String) {
         fatalError("init(pasteboardPropertyList:ofType:) has not been implemented")
     }
+    
+    required public init?(pasteboardPropertyList propertyList: Any, ofType type: NSPasteboard.PasteboardType) {
+        fatalError("init(pasteboardPropertyList:ofType:) has not been implemented")
+    }
     #endif
 
     /// Finds attributes within a given range on a String.
@@ -63,7 +67,7 @@ public class Storage: NSTextStorage {
     /// - parameter range:    The range to find attributes for.
     ///
     /// - returns: The attributes on a String within a certain range.
-    override public func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [NSAttributedStringKey : Any] {
+    override public func attributes(at location: Int, longestEffectiveRange range: NSRangePointer?, in rangeLimit: NSRange) -> [NSAttributedStringKey : Any] {
         return backingStore.attributes(at: location, effectiveRange: range)
     }
 
@@ -84,13 +88,21 @@ public class Storage: NSTextStorage {
     ///
     /// - parameter attrs: The attributes to add to the string for the range.
     /// - parameter range: The range in which to add attributes.
-    override public func setAttributes(_ attrs: [NSAttributedStringKey : Any]?, range: NSRange) {
+    public override func setAttributes(_ attrs: [NSAttributedStringKey : Any]?, range: NSRange) {
         self.beginEditing()
         backingStore.setAttributes(attrs, range: range)
         self.edited(.editedAttributes, range: range, changeInLength: 0)
         self.endEditing()
     }
-
+    
+    /// Retrieves the attributes of a string for a particular range.
+    ///
+    /// - parameter at: The location to begin with.
+    /// - parameter range: The range in which to retrieve attributes.
+    public override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [NSAttributedStringKey : Any] {
+        return backingStore.attributes(at: location, effectiveRange: range)
+    }
+    
     /// Processes any edits made to the text in the editor.
     override public func processEditing() {
         let backingString = backingStore.string
