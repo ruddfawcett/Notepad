@@ -88,7 +88,7 @@ public class Storage: NSTextStorage {
     ///
     /// - parameter attrs: The attributes to add to the string for the range.
     /// - parameter range: The range in which to add attributes.
-    public override func setAttributes(_ attrs: [NSAttributedString.Key : Any]?, range: NSRange) {
+    public override func setAttributes(_ attrs: [NSAttributedStringKey : Any]?, range: NSRange) {
         self.beginEditing()
         backingStore.setAttributes(attrs, range: range)
         self.edited(.editedAttributes, range: range, changeInLength: 0)
@@ -99,7 +99,7 @@ public class Storage: NSTextStorage {
     ///
     /// - parameter at: The location to begin with.
     /// - parameter range: The range in which to retrieve attributes.
-    public override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [NSAttributedString.Key : Any] {
+    public override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [NSAttributedStringKey : Any] {
         return backingStore.attributes(at: location, effectiveRange: range)
     }
     
