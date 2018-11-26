@@ -68,7 +68,7 @@ public class Storage: NSTextStorage {
     ///
     /// - returns: The attributes on a String within a certain range.
     override public func attributes(at location: Int, longestEffectiveRange range: NSRangePointer?, in rangeLimit: NSRange) -> [NSAttributedStringKey : Any] {
-        return backingStore.attributes(at: location, effectiveRange: range)
+        return backingStore.attributes(at: location, longestEffectiveRange: range, in: rangeLimit)
     }
 
     /// Replaces edited characters within a certain range with a new string.
