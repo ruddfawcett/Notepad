@@ -30,7 +30,7 @@ public struct Theme {
     ///
     /// - returns: The Theme.
     public init(_ name: String) {
-        let bundle = Bundle(for: object_getClass(self)!)
+        let bundle = Bundle(for: Notepad.self)
         
         let path: String
         
