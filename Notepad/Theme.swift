@@ -129,13 +129,17 @@ public struct Theme {
         }
         
         let bodyFont = body.attributes[NSAttributedString.Key.font] as? UniversalFont
+        // if size is set use custom size, otherwise use body font size, otherwise fallback to 15 points
         let fontSize: CGFloat = attributes["size"] as? CGFloat ?? (bodyFont?.pointSize ?? 15)
         
         if let fontName = attributes["font"] as? String, fontName != "System" {
+            // use custom font if set
             stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: fontName, size: fontSize)
         } else if let font = bodyFont, font.fontName != "System" {
+            // use body font if set
             stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: font.fontName, size: fontSize)
         } else {
+            // use system font in all other cases
             stringAttributes[NSAttributedString.Key.font] = UniversalFont.systemFont(ofSize: fontSize)
         }
 
