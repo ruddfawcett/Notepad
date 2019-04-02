@@ -122,11 +122,11 @@ public struct Theme {
     ///
     /// - returns: The converted attribute/key constant pairings.
     func parse(_ attributes: [String: AnyObject]) -> [NSAttributedString.Key: Any]? {
-        var final: [NSAttributedString.Key: Any] = [:]
+        var stringAttributes: [NSAttributedString.Key: Any] = [:]
 
         if let color = attributes["color"] {
             let value = color as! String
-            final[NSAttributedString.Key.foregroundColor] = UniversalColor(hexString: value)
+            stringAttributes[NSAttributedString.Key.foregroundColor] = UniversalColor(hexString: value)
         }
 
         if let font = attributes["font"] {
@@ -142,10 +142,10 @@ public struct Theme {
             }
 
             if fontName == "System" {
-                final[NSAttributedString.Key.font] = UniversalFont.systemFont(ofSize: fontSize)
+                stringAttributes[NSAttributedString.Key.font] = UniversalFont.systemFont(ofSize: fontSize)
             }
             else {
-                final[NSAttributedString.Key.font] = UniversalFont(name: fontName, size: fontSize)
+                stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: fontName, size: fontSize)
             }
         }
         else {
@@ -154,11 +154,11 @@ public struct Theme {
                 let bodyFont: UniversalFont = body.attributes[NSAttributedString.Key.font] as! UniversalFont
                 let fontSize = size as! CGFloat
 
-                final[NSAttributedString.Key.font] = UniversalFont(name: bodyFont.fontName, size: fontSize)
+                stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: bodyFont.fontName, size: fontSize)
             }
         }
 
-        return final
+        return stringAttributes
     }
 
     /// Converts a file from JSON to a [String: AnyObject] dictionary.
