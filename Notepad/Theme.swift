@@ -140,7 +140,9 @@ public struct Theme {
             stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: font.fontName, size: fontSize)
         } else {
             // use system font in all other cases
-            stringAttributes[NSAttributedString.Key.font] = UniversalFont.systemFont(ofSize: fontSize)
+            let weight = attributes["weight"] as? String ?? ""
+            let fontWeight = UIFont.Weight(name: weight) // fallback to regular if configured font weight is unknown
+            stringAttributes[NSAttributedString.Key.font] = UniversalFont.systemFont(ofSize: fontSize, weight: fontWeight)
         }
 
         return stringAttributes
@@ -166,5 +168,24 @@ public struct Theme {
         }
 
         return nil
+    }
+}
+
+
+// allow initialization of font weight by string name
+extension UIFont.Weight {
+    init(name: String) {
+        switch name {
+        case "ultraLight": self = UIFont.Weight.ultraLight
+        case "thin": self = UIFont.Weight.thin
+        case "semibold": self = UIFont.Weight.semibold
+        case "regular": self = UIFont.Weight.regular
+        case "medium": self = UIFont.Weight.medium
+        case "light": self = UIFont.Weight.light
+        case "heavy": self = UIFont.Weight.heavy
+        case "bold": self = UIFont.Weight.bold
+        case "black": self = UIFont.Weight.black
+        default: self = UIFont.Weight.regular
+        }
     }
 }
