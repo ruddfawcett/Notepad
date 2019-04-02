@@ -128,17 +128,11 @@ public struct Theme {
             let value = color as! String
             stringAttributes[NSAttributedString.Key.foregroundColor] = UniversalColor(hexString: value)
         }
+        
+        let bodyFont: UniversalFont = body.attributes[NSAttributedString.Key.font] as! UniversalFont
+        let fontSize: CGFloat = attributes["size"] as? CGFloat ?? bodyFont.pointSize
 
         if let fontName = attributes["font"] as? String {
-            var fontSize: CGFloat = 15
-
-            if let size = attributes["size"] {
-                fontSize = size as! CGFloat
-            } else {
-                let bodyFont: UniversalFont = body.attributes[NSAttributedString.Key.font] as! UniversalFont
-                fontSize = bodyFont.pointSize
-            }
-
             if fontName == "System" {
                 stringAttributes[NSAttributedString.Key.font] = UniversalFont.systemFont(ofSize: fontSize)
             } else {
