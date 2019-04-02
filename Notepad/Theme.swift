@@ -124,28 +124,19 @@ public struct Theme {
     func parse(_ attributes: [String: AnyObject]) -> [NSAttributedString.Key: Any]? {
         var stringAttributes: [NSAttributedString.Key: Any] = [:]
 
-        if let color = attributes["color"] {
-            let value = color as! String
-            stringAttributes[NSAttributedString.Key.foregroundColor] = UniversalColor(hexString: value)
+        if let color = attributes["color"] as? String {
+            stringAttributes[NSAttributedString.Key.foregroundColor] = UniversalColor(hexString: color)
         }
         
-        let bodyFont: UniversalFont = body.attributes[NSAttributedString.Key.font] as! UniversalFont
-        let fontSize: CGFloat = attributes["size"] as? CGFloat ?? bodyFont.pointSize
-
-        if let fontName = attributes["font"] as? String {
-            if fontName == "System" {
-                stringAttributes[NSAttributedString.Key.font] = UniversalFont.systemFont(ofSize: fontSize)
-            } else {
-                stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: fontName, size: fontSize)
-            }
+        let bodyFont = body.attributes[NSAttributedString.Key.font] as? UniversalFont
+        let fontSize: CGFloat = attributes["size"] as? CGFloat ?? (bodyFont?.pointSize ?? 15)
+        
+        if let fontName = attributes["font"] as? String, fontName != "System" {
+            stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: fontName, size: fontSize)
+        } else if let font = bodyFont, font.fontName != "System" {
+            stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: font.fontName, size: fontSize)
         } else {
-            // Just change font size (based on body font) if no font is specified for item.
-            if let size = attributes["size"] {
-                let bodyFont: UniversalFont = body.attributes[NSAttributedString.Key.font] as! UniversalFont
-                let fontSize = size as! CGFloat
-
-                stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: bodyFont.fontName, size: fontSize)
-            }
+            stringAttributes[NSAttributedString.Key.font] = UniversalFont.systemFont(ofSize: fontSize)
         }
 
         return stringAttributes
