@@ -80,8 +80,7 @@ public struct Theme {
             }
             else { // Create a default body font so other styles can inherit from it.
                 let attributes = [
-                    NSAttributedString.Key.foregroundColor: UniversalColor.black,
-                    NSAttributedString.Key.font: UniversalFont.systemFont(ofSize: 15)
+                    NSAttributedString.Key.foregroundColor: UniversalColor.black
                 ]
                 body = Style(element: .body, attributes: attributes)
             }
