@@ -50,6 +50,7 @@
 		F1C0E9651DB17D5700DDE5EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C0E9641DB17D5700DDE5EE /* ViewController.swift */; };
 		F1C0E9741DB292C600DDE5EE /* tests.md in Resources */ = {isa = PBXBuildFile; fileRef = F1C0E9731DB292C600DDE5EE /* tests.md */; };
 		F1C0E9781DB2A00600DDE5EE /* description.md in Resources */ = {isa = PBXBuildFile; fileRef = F1C0E9771DB2A00600DDE5EE /* description.md */; };
+		F8BA375E225363500002EAFB /* themes in Resources */ = {isa = PBXBuildFile; fileRef = F1ABABC11DDE916100E11B6B /* themes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -421,6 +422,7 @@
 			files = (
 				F1730EC21DAEA6BE00E2BB0B /* LaunchScreen.storyboard in Resources */,
 				F1C0E9781DB2A00600DDE5EE /* description.md in Resources */,
+				F8BA375E225363500002EAFB /* themes in Resources */,
 				F1C0E9741DB292C600DDE5EE /* tests.md in Resources */,
 				F1730EBF1DAEA6BE00E2BB0B /* Assets.xcassets in Resources */,
 				F1730EBD1DAEA6BE00E2BB0B /* Main.storyboard in Resources */,
