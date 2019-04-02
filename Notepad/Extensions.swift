@@ -83,3 +83,33 @@ extension String {
         return from ..< to
     }
 }
+
+extension UniversalFont {
+    func with(traits: String, size: CGFloat) -> UniversalFont? {
+        guard let traits = getTraits(from: traits) else {
+            return self
+        }
+        let descriptor = fontDescriptor.withSymbolicTraits(traits) ?? UniversalFontDescriptor(fontAttributes: [:])
+        return UniversalFont(descriptor: descriptor, size: size)
+    }
+    
+    private func getTraits(from traits: String) -> UniversalTraits? {
+        #if os(iOS)
+        switch traits {
+        case "italic": return .traitItalic
+        case "bold": return .traitBold
+        case "expanded": return .traitExpanded
+        case "condensed": return .traitCondensed
+        default: return nil
+        }
+        #elseif os(macOS)
+        switch traits {
+        case "italic": return .italic
+        case "bold": return .bold
+        case "expanded": return .expanded
+        case "condensed": return .condensed
+        default: return nil
+        }
+        #endif
+    }
+}

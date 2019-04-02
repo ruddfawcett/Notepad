@@ -131,20 +131,21 @@ public struct Theme {
         let bodyFont = body.attributes[NSAttributedString.Key.font] as? UniversalFont
         // if size is set use custom size, otherwise use body font size, otherwise fallback to 15 points
         let fontSize: CGFloat = attributes["size"] as? CGFloat ?? (bodyFont?.pointSize ?? 15)
+        let fontTraits = attributes["traits"] as? String ?? ""
+        var font: UniversalFont?
         
         if let fontName = attributes["font"] as? String, fontName != "System" {
             // use custom font if set
-            stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: fontName, size: fontSize)
-        } else if let font = bodyFont, font.fontName != "System" {
+            font = UniversalFont(name: fontName, size: fontSize)?.with(traits: fontTraits, size: fontSize)
+        } else if let bodyFont = bodyFont, bodyFont.fontName != "System" {
             // use body font if set
-            stringAttributes[NSAttributedString.Key.font] = UniversalFont(name: font.fontName, size: fontSize)
+            font = UniversalFont(name: bodyFont.fontName, size: fontSize)?.with(traits: fontTraits, size: fontSize)
         } else {
             // use system font in all other cases
-            let weight = attributes["weight"] as? String ?? ""
-            let fontWeight = UIFont.Weight(name: weight) // fallback to regular if configured font weight is unknown
-            stringAttributes[NSAttributedString.Key.font] = UniversalFont.systemFont(ofSize: fontSize, weight: fontWeight)
+            font = UniversalFont.systemFont(ofSize: fontSize).with(traits: fontTraits, size: fontSize)
         }
 
+        stringAttributes[NSAttributedString.Key.font] = font
         return stringAttributes
     }
 
@@ -168,24 +169,5 @@ public struct Theme {
         }
 
         return nil
-    }
-}
-
-
-// allow initialization of font weight by string name
-extension UIFont.Weight {
-    init(name: String) {
-        switch name {
-        case "ultraLight": self = UIFont.Weight.ultraLight
-        case "thin": self = UIFont.Weight.thin
-        case "semibold": self = UIFont.Weight.semibold
-        case "regular": self = UIFont.Weight.regular
-        case "medium": self = UIFont.Weight.medium
-        case "light": self = UIFont.Weight.light
-        case "heavy": self = UIFont.Weight.heavy
-        case "bold": self = UIFont.Weight.bold
-        case "black": self = UIFont.Weight.black
-        default: self = UIFont.Weight.regular
-        }
     }
 }
