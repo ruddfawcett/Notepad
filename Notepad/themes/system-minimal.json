@@ -1,0 +1,49 @@
+{
+    "name": "System Minimal",
+    "style": "Light",
+    "author": {
+        "name": "Stefan Trauth",
+        "email": "mail@stefantrauth.de"
+    },
+    "version": "1.0",
+    "editor": {
+        "backgroundColor": "#FFFFFF"
+    },
+    "styles": {
+        "h1": {
+            "color": "#C96667",
+            "size": 20,
+            "traits": "bold"
+        },
+        "h2": {
+            "color": "#C96667"
+        },
+        "h3": {
+            "color": "#C96667"
+        },
+        "body": {
+            "size": 17
+        },
+        "bold": {
+            "traits": "bold",
+            "color": "#D19A66"
+        },
+        "italic": {
+            "traits": "italic",
+            "color": "#C678DD"
+        },
+        "code": {
+            "color": "#95C077"
+        },
+        "handle": {
+            "regex": "[@＠][a-zA-Z0-9_]{1,20}",
+            "color": "#78ddd5"
+        },
+        "url": {
+            "color": "#78aedd"
+        },
+        "image": {
+            "color": "#78aedd"
+        }
+    }
+}
