@@ -96,19 +96,19 @@ extension UniversalFont {
     private func getTraits(from traits: String) -> UniversalTraits? {
         #if os(iOS)
         switch traits {
-        case "italic": return .traitItalic
-        case "bold": return .traitBold
-        case "expanded": return .traitExpanded
-        case "condensed": return .traitCondensed
-        default: return nil
+            case "italic": return .traitItalic
+            case "bold": return .traitBold
+            case "expanded": return .traitExpanded
+            case "condensed": return .traitCondensed
+            default: return nil
         }
         #elseif os(macOS)
         switch traits {
-        case "italic": return .italic
-        case "bold": return .bold
-        case "expanded": return .expanded
-        case "condensed": return .condensed
-        default: return nil
+            case "italic": return .italic
+            case "bold": return .bold
+            case "expanded": return .expanded
+            case "condensed": return .condensed
+            default: return nil
         }
         #endif
     }
