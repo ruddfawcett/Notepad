@@ -11,7 +11,7 @@
     public typealias UniversalColor = UIColor
     public typealias UniversalFont = UIFont
     public typealias UniversalFontDescriptor = UIFontDescriptor
-    public typealias UniversalTraits = UIFontDescriptorSymbolicTraits
+    public typealias UniversalTraits = UIFontDescriptor.SymbolicTraits
 #elseif os(macOS)
     import AppKit
     public typealias UniversalColor = NSColor
