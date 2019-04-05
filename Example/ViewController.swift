@@ -24,7 +24,7 @@ class ViewController: UIViewController {
             print(error)
         }
 
-        editor.textContainerInset = UIEdgeInsetsMake(40, 20, 40, 20)
+        editor.textContainerInset = UIEdgeInsets(top: 40, left: 20, bottom: 40, right: 20)
         self.view.addSubview(editor)
     }
 
