@@ -16,7 +16,7 @@ public struct Theme {
     /// The body style for the Notepad editor.
     public fileprivate(set) var body: Style = Style()
     /// The background color of the Notepad.
-    public fileprivate(set) var backgroundColor: UniversalColor = UniversalColor.white
+    public fileprivate(set) var backgroundColor: UniversalColor = UniversalColor.clear
     /// The tint color (AKA cursor color) of the Notepad.
     public fileprivate(set) var tintColor: UniversalColor = UniversalColor.blue
 
