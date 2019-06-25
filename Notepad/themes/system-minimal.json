@@ -6,9 +6,6 @@
         "email": "mail@stefantrauth.de"
     },
     "version": "1.0",
-    "editor": {
-        "backgroundColor": "#FFFFFF"
-    },
     "styles": {
         "h1": {
             "color": "#C96667",
