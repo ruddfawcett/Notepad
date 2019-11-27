@@ -13,6 +13,8 @@ public class Notepad: UITextView {
 
     var storage: Storage = Storage()
 
+
+
     /// Creates a new Notepad.
     ///
     /// - parameter frame:     The frame of the text editor.
@@ -26,6 +28,10 @@ public class Notepad: UITextView {
         self.backgroundColor = theme.backgroundColor
         self.tintColor = theme.tintColor
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+
+    convenience public init(frame: CGRect, theme: Theme.BuiltIn) {
+        self.init(frame: frame, themeFile: theme.rawValue)
     }
     
     convenience public init(frame: CGRect, theme: Theme) {
