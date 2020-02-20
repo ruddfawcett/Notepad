@@ -13,6 +13,24 @@
 #endif
 
 public struct Theme {
+
+    public enum BuiltIn: String {
+        case Base16TomorrowDark = "base16-tomorrow-dark"
+        case Base16TomorrowLight = "base16-tomorrow-light"
+        case BluesClues = "blues-clues"
+        case OneDarkCustom = "one-dark-custom"
+        case OneLightCustom = "one-light-custom"
+        case OneDark = "one-dark"
+        case OneLight = "one-light"
+        case SolarizedDark = "solarized-dark"
+        case SolarizedLight = "solarized-light"
+        case SystemMinimal = "system-minimal"
+
+        public func theme() -> Theme {
+            return Theme(self.rawValue)
+        }
+    }
+
     /// The body style for the Notepad editor.
     public fileprivate(set) var body: Style = Style()
     /// The background color of the Notepad.
