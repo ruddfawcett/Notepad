@@ -18,4 +18,10 @@
     public typealias UniversalFont = NSFont
     public typealias UniversalFontDescriptor = NSFontDescriptor
     public typealias UniversalTraits = NSFontDescriptor.SymbolicTraits
+
+    public extension NSColor {
+        static var label: UniversalColor {
+            labelColor
+        }
+    }
 #endif
