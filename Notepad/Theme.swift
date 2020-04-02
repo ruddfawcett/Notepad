@@ -71,7 +71,7 @@ public struct Theme {
         else {
             
             print("[Notepad] Unable to load your theme file.")
-            
+            assertionFailure()
             return
         }
         
