@@ -64,6 +64,10 @@ public struct Theme {
 
             path = path3
         }
+        else if let path4 = bundle.path(forResource: "\(name)", ofType: "json") {
+            
+            path = path4
+        }
         else {
             
             print("[Notepad] Unable to load your theme file.")
