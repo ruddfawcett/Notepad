@@ -81,6 +81,9 @@ public struct Theme {
             configure(data)
         }
     }
+    
+    public init() {
+    }
 
     /// Configures all of the styles for the Theme.
     ///
