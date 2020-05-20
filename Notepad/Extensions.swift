@@ -89,7 +89,7 @@ extension UniversalFont {
         guard let traits = getTraits(from: traits) else {
             return self
         }
-        let descriptor = fontDescriptor.withSymbolicTraits(traits) ?? UniversalFontDescriptor(fontAttributes: [:])
+        let descriptor = fontDescriptor.withSymbolicTraits(traits) 
         return UniversalFont(descriptor: descriptor, size: size)
     }
     
