@@ -99,13 +99,13 @@ public struct Theme {
 
         if var allStyles = data["styles"] as? [String: AnyObject] {
             if let bodyStyles = allStyles["body"] as? [String: AnyObject] {
-                if var parsedBodyStyles = parse(bodyStyles) {
+                if let parsedBodyStyles = parse(bodyStyles) {
 
                     body = Style(element: .body, attributes: parsedBodyStyles)
                 }
             }
             else { // Create a default body font so other styles can inherit from it.
-                var textColor = UniversalColor.black
+                let textColor = UniversalColor.black
              
                 let attributes = [NSAttributedString.Key.foregroundColor: textColor]
                 body = Style(element: .body, attributes: attributes)
