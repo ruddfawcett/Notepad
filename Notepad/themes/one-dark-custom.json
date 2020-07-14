@@ -25,9 +25,14 @@
             "size": 25
         },
         "h3": {
+            "regex": "^((?<hash>\\#{3})(.*))$",
             "font": "Courier-Bold",
-            "color": "#D36770",
+            "groups": ["hash"],
+            "color": "#FFFFFF",
             "size": 22
+        },
+        "hash": {
+            "color": "#D36770"
         },
         "body": {
             "font": "Courier",

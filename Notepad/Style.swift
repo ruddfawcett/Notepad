@@ -9,17 +9,23 @@
 import Foundation
 
 public struct Style {
+    public var name: String?
     var regex: NSRegularExpression!
     public var attributes: [NSAttributedString.Key: Any] = [:]
+    var groups: [String]?
 
-    public init(element: Element, attributes: [NSAttributedString.Key: Any]) {
+    public init(element: Element, attributes: [NSAttributedString.Key: Any], groups: [String]? = nil, name: String? = nil) {
+        self.name = name
         self.regex = element.toRegex()
         self.attributes = attributes
+        self.groups = groups
     }
 
-    public init(regex: NSRegularExpression, attributes: [NSAttributedString.Key: Any]) {
+    public init(regex: NSRegularExpression, attributes: [NSAttributedString.Key: Any], groups: [String]? = nil, name: String? = nil) {
+        self.name = name
         self.regex = regex
         self.attributes = attributes
+        self.groups = groups
     }
 
     public init() {

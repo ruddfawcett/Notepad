@@ -41,6 +41,9 @@ public struct Theme {
     /// All of the other styles for the Notepad editor.
     public var styles: [Style] = []
     
+    public func style(withName name: String) -> Style? {
+        styles.first(where: { $0.name == name })
+    }
 
     /// Build a theme from a JSON theme file.
     ///
@@ -120,12 +123,13 @@ public struct Theme {
             allStyles.removeValue(forKey: "body")
             for (element, attributes) in allStyles {
                 if let parsedStyles = parse(attributes as! [String : AnyObject]) {
+                    let groups = attributes["groups"] as? [String]
+                    
                     if let regexString = attributes["regex"] as? String {
                         let regex = regexString.toRegex()
-                        styles.append(Style(regex: regex, attributes: parsedStyles))
-                    }
-                    else {
-                        styles.append(Style(element: Element.unknown.from(string: element), attributes: parsedStyles))
+                        styles.append(Style(regex: regex, attributes: parsedStyles, groups: groups, name: element))
+                    } else {
+                        styles.append(Style(element: Element.unknown.from(string: element), attributes: parsedStyles, groups: groups, name: element))
                     }
                 }
             }
