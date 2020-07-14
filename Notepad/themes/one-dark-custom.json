@@ -27,6 +27,7 @@
         "h3": {
             "regex": "^((?<hash>\\#{3})(.*))$",
             "font": "Courier-Bold",
+            "groups": ["hash"],
             "color": "#FFFFFF",
             "size": 22
         },
