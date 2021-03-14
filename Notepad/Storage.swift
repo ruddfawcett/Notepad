@@ -106,11 +106,11 @@ public class Storage: NSTextStorage {
     /// Processes any edits made to the text in the editor.
     override public func processEditing() {
         let backingString = backingStore.string
-        let nsRange = backingString.range(from: NSMakeRange(NSMaxRange(editedRange), 0))!
-        let indexRange = backingString.lineRange(for: nsRange)
-        let extendedRange: NSRange = NSUnionRange(editedRange, backingString.nsRange(from: indexRange))
-
-        applyStyles(extendedRange)
+        if let nsRange = backingString.range(from: NSMakeRange(NSMaxRange(editedRange), 0)) {
+            let indexRange = backingString.lineRange(for: nsRange)
+            let extendedRange: NSRange = NSUnionRange(editedRange, backingString.nsRange(from: indexRange))
+            applyStyles(extendedRange)
+        }
         super.processEditing()
     }
 

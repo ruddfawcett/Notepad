@@ -32,14 +32,14 @@ public struct Theme {
     }
 
     /// The body style for the Notepad editor.
-    public fileprivate(set) var body: Style = Style()
+    public var body: Style = Style()
     /// The background color of the Notepad.
-    public fileprivate(set) var backgroundColor: UniversalColor = UniversalColor.clear
+    public var backgroundColor: UniversalColor = UniversalColor.clear
     /// The tint color (AKA cursor color) of the Notepad.
-    public fileprivate(set) var tintColor: UniversalColor = UniversalColor.blue
+    public var tintColor: UniversalColor = UniversalColor.blue
 
     /// All of the other styles for the Notepad editor.
-    var styles: [Style] = []
+    public var styles: [Style] = []
     
 
     /// Build a theme from a JSON theme file.
@@ -64,10 +64,14 @@ public struct Theme {
 
             path = path3
         }
+        else if let path4 = bundle.path(forResource: name, ofType: "json") {
+            
+            path = path4
+        }
         else {
             
             print("[Notepad] Unable to load your theme file.")
-            
+            assertionFailure()
             return
         }
         
@@ -80,6 +84,9 @@ public struct Theme {
         if let data = convertFile(themePath) {
             configure(data)
         }
+    }
+    
+    public init() {
     }
 
     /// Configures all of the styles for the Theme.
