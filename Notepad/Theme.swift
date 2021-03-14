@@ -14,7 +14,7 @@
 
 public struct Theme {
 
-    public enum BuiltIn: String {
+    public enum BuiltIn: String, CaseIterable {
         case Base16TomorrowDark = "base16-tomorrow-dark"
         case Base16TomorrowLight = "base16-tomorrow-light"
         case BluesClues = "blues-clues"
@@ -67,6 +67,10 @@ public struct Theme {
         else if let path4 = bundle.path(forResource: name, ofType: "json") {
             
             path = path4
+        }
+        else if let path5 = Bundle.module.path(forResource: "themes/\(name)", ofType: "json") {
+
+            path = path5
         }
         else {
             

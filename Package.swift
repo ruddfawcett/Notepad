@@ -28,7 +28,8 @@ let package = Package(
         "Notepad.h",
         "Notepad.m",
       ],
-      resources: [.process("themes")]
-    )
+      resources: [.copy("themes")]
+    ),
+    .testTarget(name: "NotepadTests", dependencies: ["Notepad"]),
   ]
 )
